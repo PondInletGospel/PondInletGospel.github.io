@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <title>Pond Inlet Gospel</title>
+  <g fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <!-- horizon -->
+    <path d="M6 46H58"/>
+    <!-- mountains -->
+    <path d="M10 46 24 26 34 38 44 20 54 46"/>
+    <!-- simple cross -->
+    <path d="M30 18V34"/>
+    <path d="M24 24H36"/>
+  </g>
+</svg>
