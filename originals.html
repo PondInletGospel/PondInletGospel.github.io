@@ -1,0 +1,541 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Original Photos</title>
+  <link rel="stylesheet" href="assets/css/site.css" />
+  <style>
+    /* Gallery-only page (root). Generated 2026-02-09 04:35:02. */
+    main{padding: 18px 0 54px}
+    .pagehead h1{margin:0 0 6px; font-size: 22px}
+    .pagehead p{margin:0; color: var(--muted)}
+
+    .gallery-grid{
+      display:grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px;
+      margin-top: 14px;
+    }
+    .gitem{
+      margin:0;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow:hidden;
+      background: var(--card);
+      box-shadow: 0 8px 20px rgba(17,24,39,.06);
+    }
+    @media (prefers-color-scheme: dark){
+      .gitem{ box-shadow: 0 10px 26px rgba(0,0,0,.20); }
+    }
+    .gitem img{
+      width:100%;
+      height: 220px;
+      object-fit: cover;
+      display:block;
+    }
+    @media (min-width: 860px){
+      .gitem img{ height: 260px; }
+    }
+    .gcap{
+      padding: 10px 12px;
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.35;
+      display:flex;
+      align-items:baseline;
+      justify-content:space-between;
+      gap: 10px;
+    }
+    .gname{ font-weight: 650; color: var(--text); }
+    .gmeta{ font-variant-numeric: tabular-nums; white-space: nowrap; }
+
+    /* Lightbox */
+    .lightbox[hidden]{ display:none; }
+    .lightbox{
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      background: rgba(0,0,0,.86);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding: 18px;
+    }
+    .lightbox-inner{
+      max-width: min(1100px, 96vw);
+      max-height: 92vh;
+      display:flex;
+      flex-direction:column;
+      gap: 10px;
+    }
+    .lightbox-top{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 12px;
+      color: rgba(255,255,255,.92);
+      font-size: 13px;
+    }
+    .lightbox-top .lb-meta{
+      overflow:hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      max-width: 70vw;
+    }
+    .lightbox img{
+      width: 100%;
+      height: auto;
+      max-height: 82vh;
+      object-fit: contain;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.18);
+      box-shadow: 0 18px 50px rgba(0,0,0,.45);
+      background: rgba(0,0,0,.25);
+    }
+    .lb-btn{
+      appearance:none;
+      border: 1px solid rgba(255,255,255,.28);
+      background: rgba(255,255,255,.10);
+      color: rgba(255,255,255,.95);
+      padding: 8px 11px;
+      border-radius: 12px;
+      cursor:pointer;
+      font-weight: 650;
+    }
+    .lb-btn:hover{ background: rgba(255,255,255,.16); }
+    .lb-link{ color: rgba(255,255,255,.92); text-decoration: none; }
+    .lb-link:hover{ text-decoration: underline; }
+  </style>
+</head>
+
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <main id="main" class="container narrow">
+    <section class="card">
+      <div class="pagehead">
+        <h1>Original Photos</h1>
+        <p>Showing 39 image(s) from <code>assets/img/Orig/</code>. Tap any image to view full size.</p>
+      </div>
+
+      <div class="gallery-grid" id="gallery">
+<figure class="gitem">
+          <a class="glink" href="assets/img/Orig/IMG-20260206-WA0027.jpg" target="_blank" rel="noopener" data-full="assets/img/Orig/IMG-20260206-WA0027.jpg" data-name="IMG-20260206-WA0027.jpg" data-dim="1600×1200">
+            <img src="assets/img/Orig/IMG-20260206-WA0027.jpg" alt="IMG-20260206-WA0027.jpg" loading="lazy" decoding="async" width="1600" height="1200">
+          </a>
+          <figcaption class="gcap">
+            <div class="gname">IMG-20260206-WA0027.jpg</div>
+            <div class="gmeta">1600×1200</div>
+          </figcaption>
+        </figure>
+<figure class="gitem">
+          <a class="glink" href="assets/img/Orig/IMG-20260206-WA0028.jpg" target="_blank" rel="noopener" data-full="assets/img/Orig/IMG-20260206-WA0028.jpg" data-name="IMG-20260206-WA0028.jpg" data-dim="1200×1600">
+            <img src="assets/img/Orig/IMG-20260206-WA0028.jpg" alt="IMG-20260206-WA0028.jpg" loading="lazy" decoding="async" width="1200" height="1600">
+          </a>
+          <figcaption class="gcap">
+            <div class="gname">IMG-20260206-WA0028.jpg</div>
+            <div class="gmeta">1200×1600</div>
+          </figcaption>
+        </figure>
+<figure class="gitem">
+          <a class="glink" href="assets/img/Orig/IMG-20260206-WA0029.jpg" target="_blank" rel="noopener" data-full="assets/img/Orig/IMG-20260206-WA0029.jpg" data-name="IMG-20260206-WA0029.jpg" data-dim="1200×1600">
+            <img src="assets/img/Orig/IMG-20260206-WA0029.jpg" alt="IMG-20260206-WA0029.jpg" loading="lazy" decoding="async" width="1200" height="1600">
+          </a>
+          <figcaption class="gcap">
+            <div class="gname">IMG-20260206-WA0029.jpg</div>
+            <div class="gmeta">1200×1600</div>
+          </figcaption>
+        </figure>
+<figure class="gitem">
+          <a class="glink" href="assets/img/Orig/IMG-20260207-WA0003.jpg" target="_blank" rel="noopener" data-full="assets/img/Orig/IMG-20260207-WA0003.jpg" data-name="IMG-20260207-WA0003.jpg" data-dim="1600×1200">
+            <img src="assets/img/Orig/IMG-20260207-WA0003.jpg" alt="IMG-20260207-WA0003.jpg" loading="lazy" decoding="async" width="1600" height="1200">
+          </a>
+          <figcaption class="gcap">
+            <div class="gname">IMG-20260207-WA0003.jpg</div>
+            <div class="gmeta">1600×1200</div>
+          </figcaption>
+        </figure>
+<figure class="gitem">
+          <a class="glink" href="assets/img/Orig/IMG-20260207-WA0012.jpg" target="_blank" rel="noopener" data-full="assets/img/Orig/IMG-20260207-WA0012.jpg" data-name="IMG-20260207-WA0012.jpg" data-dim="1600×1200">
+            <img src="assets/img/Orig/IMG-20260207-WA0012.jpg" alt="IMG-20260207-WA0012.jpg" loading="lazy" decoding="async" width="1600" height="1200">
+          </a>
+          <figcaption class="gcap">
+            <div class="gname">IMG-20260207-WA0012.jpg</div>
+            <div class="gmeta">1600×1200</div>
+          </figcaption>
+        </figure>
+<figure class="gitem">
+          <a class="glink" href="assets/img/Orig/IMG-20260207-WA0014.jpg" target="_blank" rel="noopener" data-full="assets/img/Orig/IMG-20260207-WA0014.jpg" data-name="IMG-20260207-WA0014.jpg" data-dim="1200×1600">
+            <img src="assets/img/Orig/IMG-20260207-WA0014.jpg" alt="IMG-20260207-WA0014.jpg" loading="lazy" decoding="async" width="1200" height="1600">
+          </a>
+          <figcaption class="gcap">
+            <div class="gname">IMG-20260207-WA0014.jpg</div>
+            <div class="gmeta">1200×1600</div>
+          </figcaption>
+        </figure>
+<figure class="gitem">
+          <a class="glink" href="assets/img/Orig/IMG-20260207-WA0015.jpg" target="_blank" rel="noopener" data-full="assets/img/Orig/IMG-20260207-WA0015.jpg" data-name="IMG-20260207-WA0015.jpg" data-dim="1600×1200">
+            <img src="assets/img/Orig/IMG-20260207-WA0015.jpg" alt="IMG-20260207-WA0015.jpg" loading="lazy" decoding="async" width="1600" height="1200">
+          </a>
+          <figcaption class="gcap">
+            <div class="gname">IMG-20260207-WA0015.jpg</div>
+            <div class="gmeta">1600×1200</div>
+          </figcaption>
+        </figure>
+<figure class="gitem">
+          <a class="glink" href="assets/img/Orig/IMG-20260207-WA0016.jpg" target="_blank" rel="noopener" data-full="assets/img/Orig/IMG-20260207-WA0016.jpg" data-name="IMG-20260207-WA0016.jpg" data-dim="1600×1200">
+            <img src="assets/img/Orig/IMG-20260207-WA0016.jpg" alt="IMG-20260207-WA0016.jpg" loading="lazy" decoding="async" width="1600" height="1200">
+          </a>
+          <figcaption class="gcap">
+            <div class="gname">IMG-20260207-WA0016.jpg</div>
+            <div class="gmeta">1600×1200</div>
+          </figcaption>
+        </figure>
+<figure class="gitem">
+          <a class="glink" href="assets/img/Orig/IMG-20260207-WA0017.jpg" target="_blank" rel="noopener" data-full="assets/img/Orig/IMG-20260207-WA0017.jpg" data-name="IMG-20260207-WA0017.jpg" data-dim="1206×1600">
+            <img src="assets/img/Orig/IMG-20260207-WA0017.jpg" alt="IMG-20260207-WA0017.jpg" loading="lazy" decoding="async" width="1206" height="1600">
+          </a>
+          <figcaption class="gcap">
+            <div class="gname">IMG-20260207-WA0017.jpg</div>
+            <div class="gmeta">1206×1600</div>
+          </figcaption>
+        </figure>
+<figure class="gitem">
+          <a class="glink" href="assets/img/Orig/IMG-20260207-WA0018.jpg" target="_blank" rel="noopener" data-full="assets/img/Orig/IMG-20260207-WA0018.jpg" data-name="IMG-20260207-WA0018.jpg" data-dim="1200×1600">
+            <img src="assets/img/Orig/IMG-20260207-WA0018.jpg" alt="IMG-20260207-WA0018.jpg" loading="lazy" decoding="async" width="1200" height="1600">
+          </a>
+          <figcaption class="gcap">
+            <div class="gname">IMG-20260207-WA0018.jpg</div>
+            <div class="gmeta">1200×1600</div>
+          </figcaption>
+        </figure>
+<figure class="gitem">
+          <a class="glink" href="assets/img/Orig/IMG-20260207-WA0020.jpg" target="_blank" rel="noopener" data-full="assets/img/Orig/IMG-20260207-WA0020.jpg" data-name="IMG-20260207-WA0020.jpg" data-dim="1200×1600">
+            <img src="assets/img/Orig/IMG-20260207-WA0020.jpg" alt="IMG-20260207-WA0020.jpg" loading="lazy" decoding="async" width="1200" height="1600">
+          </a>
+          <figcaption class="gcap">
+            <div class="gname">IMG-20260207-WA0020.jpg</div>
+            <div class="gmeta">1200×1600</div>
+          </figcaption>
+        </figure>
+<figure class="gitem">
+          <a class="glink" href="assets/img/Orig/IMG-20260207-WA0022.jpg" target="_blank" rel="noopener" data-full="assets/img/Orig/IMG-20260207-WA0022.jpg" data-name="IMG-20260207-WA0022.jpg" data-dim="1600×1200">
+            <img src="assets/img/Orig/IMG-20260207-WA0022.jpg" alt="IMG-20260207-WA0022.jpg" loading="lazy" decoding="async" width="1600" height="1200">
+          </a>
+          <figcaption class="gcap">
+            <div class="gname">IMG-20260207-WA0022.jpg</div>
+            <div class="gmeta">1600×1200</div>
+          </figcaption>
+        </figure>
+<figure class="gitem">
+          <a class="glink" href="assets/img/Orig/IMG-20260207-WA0023.jpg" target="_blank" rel="noopener" data-full="assets/img/Orig/IMG-20260207-WA0023.jpg" data-name="IMG-20260207-WA0023.jpg" data-dim="1280×1600">
+            <img src="assets/img/Orig/IMG-20260207-WA0023.jpg" alt="IMG-20260207-WA0023.jpg" loading="lazy" decoding="async" width="1280" height="1600">
+          </a>
+          <figcaption class="gcap">
+            <div class="gname">IMG-20260207-WA0023.jpg</div>
+            <div class="gmeta">1280×1600</div>
+          </figcaption>
+        </figure>
+<figure class="gitem">
+          <a class="glink" href="assets/img/Orig/IMG-20260207-WA0027.jpg" target="_blank" rel="noopener" data-full="assets/img/Orig/IMG-20260207-WA0027.jpg" data-name="IMG-20260207-WA0027.jpg" data-dim="1200×1600">
+            <img src="assets/img/Orig/IMG-20260207-WA0027.jpg" alt="IMG-20260207-WA0027.jpg" loading="lazy" decoding="async" width="1200" height="1600">
+          </a>
+          <figcaption class="gcap">
+            <div class="gname">IMG-20260207-WA0027.jpg</div>
+            <div class="gmeta">1200×1600</div>
+          </figcaption>
+        </figure>
+<figure class="gitem">
+          <a class="glink" href="assets/img/Orig/IMG-20260207-WA0028.jpg" target="_blank" rel="noopener" data-full="assets/img/Orig/IMG-20260207-WA0028.jpg" data-name="IMG-20260207-WA0028.jpg" data-dim="1600×1200">
+            <img src="assets/img/Orig/IMG-20260207-WA0028.jpg" alt="IMG-20260207-WA0028.jpg" loading="lazy" decoding="async" width="1600" height="1200">
+          </a>
+          <figcaption class="gcap">
+            <div class="gname">IMG-20260207-WA0028.jpg</div>
+            <div class="gmeta">1600×1200</div>
+          </figcaption>
+        </figure>
+<figure class="gitem">
+          <a class="glink" href="assets/img/Orig/IMG-20260207-WA0029.jpg" target="_blank" rel="noopener" data-full="assets/img/Orig/IMG-20260207-WA0029.jpg" data-name="IMG-20260207-WA0029.jpg" data-dim="1600×1200">
+            <img src="assets/img/Orig/IMG-20260207-WA0029.jpg" alt="IMG-20260207-WA0029.jpg" loading="lazy" decoding="async" width="1600" height="1200">
+          </a>
+          <figcaption class="gcap">
+            <div class="gname">IMG-20260207-WA0029.jpg</div>
+            <div class="gmeta">1600×1200</div>
+          </figcaption>
+        </figure>
+<figure class="gitem">
+          <a class="glink" href="assets/img/Orig/VID-20260207-WA0004_exported_1276.jpg" target="_blank" rel="noopener" data-full="assets/img/Orig/VID-20260207-WA0004_exported_1276.jpg" data-name="VID-20260207-WA0004_exported_1276.jpg" data-dim="848×480">
+            <img src="assets/img/Orig/VID-20260207-WA0004_exported_1276.jpg" alt="VID-20260207-WA0004_exported_1276.jpg" loading="lazy" decoding="async" width="848" height="480">
+          </a>
+          <figcaption class="gcap">
+            <div class="gname">VID-20260207-WA0004_exported_1276.jpg</div>
+            <div class="gmeta">848×480</div>
+          </figcaption>
+        </figure>
+<figure class="gitem">
+          <a class="glink" href="assets/img/Orig/VID-20260207-WA0005_exported_305.jpg" target="_blank" rel="noopener" data-full="assets/img/Orig/VID-20260207-WA0005_exported_305.jpg" data-name="VID-20260207-WA0005_exported_305.jpg" data-dim="480×848">
+            <img src="assets/img/Orig/VID-20260207-WA0005_exported_305.jpg" alt="VID-20260207-WA0005_exported_305.jpg" loading="lazy" decoding="async" width="480" height="848">
+          </a>
+          <figcaption class="gcap">
+            <div class="gname">VID-20260207-WA0005_exported_305.jpg</div>
+            <div class="gmeta">480×848</div>
+          </figcaption>
+        </figure>
+<figure class="gitem">
+          <a class="glink" href="assets/img/Orig/VID-20260207-WA0006_exported_14764.jpg" target="_blank" rel="noopener" data-full="assets/img/Orig/VID-20260207-WA0006_exported_14764.jpg" data-name="VID-20260207-WA0006_exported_14764.jpg" data-dim="480×848">
+            <img src="assets/img/Orig/VID-20260207-WA0006_exported_14764.jpg" alt="VID-20260207-WA0006_exported_14764.jpg" loading="lazy" decoding="async" width="480" height="848">
+          </a>
+          <figcaption class="gcap">
+            <div class="gname">VID-20260207-WA0006_exported_14764.jpg</div>
+            <div class="gmeta">480×848</div>
+          </figcaption>
+        </figure>
+<figure class="gitem">
+          <a class="glink" href="assets/img/Orig/VID-20260207-WA0006_exported_5548.jpg" target="_blank" rel="noopener" data-full="assets/img/Orig/VID-20260207-WA0006_exported_5548.jpg" data-name="VID-20260207-WA0006_exported_5548.jpg" data-dim="480×848">
+            <img src="assets/img/Orig/VID-20260207-WA0006_exported_5548.jpg" alt="VID-20260207-WA0006_exported_5548.jpg" loading="lazy" decoding="async" width="480" height="848">
+          </a>
+          <figcaption class="gcap">
+            <div class="gname">VID-20260207-WA0006_exported_5548.jpg</div>
+            <div class="gmeta">480×848</div>
+          </figcaption>
+        </figure>
+<figure class="gitem">
+          <a class="glink" href="assets/img/Orig/VID-20260207-WA0006_exported_7797.jpg" target="_blank" rel="noopener" data-full="assets/img/Orig/VID-20260207-WA0006_exported_7797.jpg" data-name="VID-20260207-WA0006_exported_7797.jpg" data-dim="480×848">
+            <img src="assets/img/Orig/VID-20260207-WA0006_exported_7797.jpg" alt="VID-20260207-WA0006_exported_7797.jpg" loading="lazy" decoding="async" width="480" height="848">
+          </a>
+          <figcaption class="gcap">
+            <div class="gname">VID-20260207-WA0006_exported_7797.jpg</div>
+            <div class="gmeta">480×848</div>
+          </figcaption>
+        </figure>
+<figure class="gitem">
+          <a class="glink" href="assets/img/Orig/VID-20260207-WA0007_exported_2788.jpg" target="_blank" rel="noopener" data-full="assets/img/Orig/VID-20260207-WA0007_exported_2788.jpg" data-name="VID-20260207-WA0007_exported_2788.jpg" data-dim="480×848">
+            <img src="assets/img/Orig/VID-20260207-WA0007_exported_2788.jpg" alt="VID-20260207-WA0007_exported_2788.jpg" loading="lazy" decoding="async" width="480" height="848">
+          </a>
+          <figcaption class="gcap">
+            <div class="gname">VID-20260207-WA0007_exported_2788.jpg</div>
+            <div class="gmeta">480×848</div>
+          </figcaption>
+        </figure>
+<figure class="gitem">
+          <a class="glink" href="assets/img/Orig/VID-20260207-WA0008_exported_176.jpg" target="_blank" rel="noopener" data-full="assets/img/Orig/VID-20260207-WA0008_exported_176.jpg" data-name="VID-20260207-WA0008_exported_176.jpg" data-dim="480×848">
+            <img src="assets/img/Orig/VID-20260207-WA0008_exported_176.jpg" alt="VID-20260207-WA0008_exported_176.jpg" loading="lazy" decoding="async" width="480" height="848">
+          </a>
+          <figcaption class="gcap">
+            <div class="gname">VID-20260207-WA0008_exported_176.jpg</div>
+            <div class="gmeta">480×848</div>
+          </figcaption>
+        </figure>
+<figure class="gitem">
+          <a class="glink" href="assets/img/Orig/VID-20260207-WA0009_exported_0.jpg" target="_blank" rel="noopener" data-full="assets/img/Orig/VID-20260207-WA0009_exported_0.jpg" data-name="VID-20260207-WA0009_exported_0.jpg" data-dim="480×848">
+            <img src="assets/img/Orig/VID-20260207-WA0009_exported_0.jpg" alt="VID-20260207-WA0009_exported_0.jpg" loading="lazy" decoding="async" width="480" height="848">
+          </a>
+          <figcaption class="gcap">
+            <div class="gname">VID-20260207-WA0009_exported_0.jpg</div>
+            <div class="gmeta">480×848</div>
+          </figcaption>
+        </figure>
+<figure class="gitem">
+          <a class="glink" href="assets/img/Orig/VID-20260207-WA0010_exported_4250.jpg" target="_blank" rel="noopener" data-full="assets/img/Orig/VID-20260207-WA0010_exported_4250.jpg" data-name="VID-20260207-WA0010_exported_4250.jpg" data-dim="480×848">
+            <img src="assets/img/Orig/VID-20260207-WA0010_exported_4250.jpg" alt="VID-20260207-WA0010_exported_4250.jpg" loading="lazy" decoding="async" width="480" height="848">
+          </a>
+          <figcaption class="gcap">
+            <div class="gname">VID-20260207-WA0010_exported_4250.jpg</div>
+            <div class="gmeta">480×848</div>
+          </figcaption>
+        </figure>
+<figure class="gitem">
+          <a class="glink" href="assets/img/Orig/VID-20260207-WA0010_exported_8228.jpg" target="_blank" rel="noopener" data-full="assets/img/Orig/VID-20260207-WA0010_exported_8228.jpg" data-name="VID-20260207-WA0010_exported_8228.jpg" data-dim="480×848">
+            <img src="assets/img/Orig/VID-20260207-WA0010_exported_8228.jpg" alt="VID-20260207-WA0010_exported_8228.jpg" loading="lazy" decoding="async" width="480" height="848">
+          </a>
+          <figcaption class="gcap">
+            <div class="gname">VID-20260207-WA0010_exported_8228.jpg</div>
+            <div class="gmeta">480×848</div>
+          </figcaption>
+        </figure>
+<figure class="gitem">
+          <a class="glink" href="assets/img/Orig/VID-20260207-WA0011_exported_16594.jpg" target="_blank" rel="noopener" data-full="assets/img/Orig/VID-20260207-WA0011_exported_16594.jpg" data-name="VID-20260207-WA0011_exported_16594.jpg" data-dim="480×848">
+            <img src="assets/img/Orig/VID-20260207-WA0011_exported_16594.jpg" alt="VID-20260207-WA0011_exported_16594.jpg" loading="lazy" decoding="async" width="480" height="848">
+          </a>
+          <figcaption class="gcap">
+            <div class="gname">VID-20260207-WA0011_exported_16594.jpg</div>
+            <div class="gmeta">480×848</div>
+          </figcaption>
+        </figure>
+<figure class="gitem">
+          <a class="glink" href="assets/img/Orig/VID-20260207-WA0011_exported_4806.jpg" target="_blank" rel="noopener" data-full="assets/img/Orig/VID-20260207-WA0011_exported_4806.jpg" data-name="VID-20260207-WA0011_exported_4806.jpg" data-dim="480×848">
+            <img src="assets/img/Orig/VID-20260207-WA0011_exported_4806.jpg" alt="VID-20260207-WA0011_exported_4806.jpg" loading="lazy" decoding="async" width="480" height="848">
+          </a>
+          <figcaption class="gcap">
+            <div class="gname">VID-20260207-WA0011_exported_4806.jpg</div>
+            <div class="gmeta">480×848</div>
+          </figcaption>
+        </figure>
+<figure class="gitem">
+          <a class="glink" href="assets/img/Orig/VID-20260207-WA0013_exported_1130.jpg" target="_blank" rel="noopener" data-full="assets/img/Orig/VID-20260207-WA0013_exported_1130.jpg" data-name="VID-20260207-WA0013_exported_1130.jpg" data-dim="480×848">
+            <img src="assets/img/Orig/VID-20260207-WA0013_exported_1130.jpg" alt="VID-20260207-WA0013_exported_1130.jpg" loading="lazy" decoding="async" width="480" height="848">
+          </a>
+          <figcaption class="gcap">
+            <div class="gname">VID-20260207-WA0013_exported_1130.jpg</div>
+            <div class="gmeta">480×848</div>
+          </figcaption>
+        </figure>
+<figure class="gitem">
+          <a class="glink" href="assets/img/Orig/VID-20260207-WA0013_exported_5781.jpg" target="_blank" rel="noopener" data-full="assets/img/Orig/VID-20260207-WA0013_exported_5781.jpg" data-name="VID-20260207-WA0013_exported_5781.jpg" data-dim="480×848">
+            <img src="assets/img/Orig/VID-20260207-WA0013_exported_5781.jpg" alt="VID-20260207-WA0013_exported_5781.jpg" loading="lazy" decoding="async" width="480" height="848">
+          </a>
+          <figcaption class="gcap">
+            <div class="gname">VID-20260207-WA0013_exported_5781.jpg</div>
+            <div class="gmeta">480×848</div>
+          </figcaption>
+        </figure>
+<figure class="gitem">
+          <a class="glink" href="assets/img/Orig/VID-20260207-WA0019_exported_3128.jpg" target="_blank" rel="noopener" data-full="assets/img/Orig/VID-20260207-WA0019_exported_3128.jpg" data-name="VID-20260207-WA0019_exported_3128.jpg" data-dim="848×480">
+            <img src="assets/img/Orig/VID-20260207-WA0019_exported_3128.jpg" alt="VID-20260207-WA0019_exported_3128.jpg" loading="lazy" decoding="async" width="848" height="480">
+          </a>
+          <figcaption class="gcap">
+            <div class="gname">VID-20260207-WA0019_exported_3128.jpg</div>
+            <div class="gmeta">848×480</div>
+          </figcaption>
+        </figure>
+<figure class="gitem">
+          <a class="glink" href="assets/img/Orig/VID-20260207-WA0021_exported_3451.jpg" target="_blank" rel="noopener" data-full="assets/img/Orig/VID-20260207-WA0021_exported_3451.jpg" data-name="VID-20260207-WA0021_exported_3451.jpg" data-dim="848×480">
+            <img src="assets/img/Orig/VID-20260207-WA0021_exported_3451.jpg" alt="VID-20260207-WA0021_exported_3451.jpg" loading="lazy" decoding="async" width="848" height="480">
+          </a>
+          <figcaption class="gcap">
+            <div class="gname">VID-20260207-WA0021_exported_3451.jpg</div>
+            <div class="gmeta">848×480</div>
+          </figcaption>
+        </figure>
+<figure class="gitem">
+          <a class="glink" href="assets/img/Orig/VID-20260207-WA0024_exported_0.jpg" target="_blank" rel="noopener" data-full="assets/img/Orig/VID-20260207-WA0024_exported_0.jpg" data-name="VID-20260207-WA0024_exported_0.jpg" data-dim="480×848">
+            <img src="assets/img/Orig/VID-20260207-WA0024_exported_0.jpg" alt="VID-20260207-WA0024_exported_0.jpg" loading="lazy" decoding="async" width="480" height="848">
+          </a>
+          <figcaption class="gcap">
+            <div class="gname">VID-20260207-WA0024_exported_0.jpg</div>
+            <div class="gmeta">480×848</div>
+          </figcaption>
+        </figure>
+<figure class="gitem">
+          <a class="glink" href="assets/img/Orig/VID-20260207-WA0024_exported_19454.jpg" target="_blank" rel="noopener" data-full="assets/img/Orig/VID-20260207-WA0024_exported_19454.jpg" data-name="VID-20260207-WA0024_exported_19454.jpg" data-dim="480×848">
+            <img src="assets/img/Orig/VID-20260207-WA0024_exported_19454.jpg" alt="VID-20260207-WA0024_exported_19454.jpg" loading="lazy" decoding="async" width="480" height="848">
+          </a>
+          <figcaption class="gcap">
+            <div class="gname">VID-20260207-WA0024_exported_19454.jpg</div>
+            <div class="gmeta">480×848</div>
+          </figcaption>
+        </figure>
+<figure class="gitem">
+          <a class="glink" href="assets/img/Orig/VID-20260207-WA0025_exported_2344.jpg" target="_blank" rel="noopener" data-full="assets/img/Orig/VID-20260207-WA0025_exported_2344.jpg" data-name="VID-20260207-WA0025_exported_2344.jpg" data-dim="480×848">
+            <img src="assets/img/Orig/VID-20260207-WA0025_exported_2344.jpg" alt="VID-20260207-WA0025_exported_2344.jpg" loading="lazy" decoding="async" width="480" height="848">
+          </a>
+          <figcaption class="gcap">
+            <div class="gname">VID-20260207-WA0025_exported_2344.jpg</div>
+            <div class="gmeta">480×848</div>
+          </figcaption>
+        </figure>
+<figure class="gitem">
+          <a class="glink" href="assets/img/Orig/VID-20260207-WA0026_exported_0.jpg" target="_blank" rel="noopener" data-full="assets/img/Orig/VID-20260207-WA0026_exported_0.jpg" data-name="VID-20260207-WA0026_exported_0.jpg" data-dim="848×480">
+            <img src="assets/img/Orig/VID-20260207-WA0026_exported_0.jpg" alt="VID-20260207-WA0026_exported_0.jpg" loading="lazy" decoding="async" width="848" height="480">
+          </a>
+          <figcaption class="gcap">
+            <div class="gname">VID-20260207-WA0026_exported_0.jpg</div>
+            <div class="gmeta">848×480</div>
+          </figcaption>
+        </figure>
+<figure class="gitem">
+          <a class="glink" href="assets/img/Orig/VID-20260207-WA0026_exported_10310.jpg" target="_blank" rel="noopener" data-full="assets/img/Orig/VID-20260207-WA0026_exported_10310.jpg" data-name="VID-20260207-WA0026_exported_10310.jpg" data-dim="848×480">
+            <img src="assets/img/Orig/VID-20260207-WA0026_exported_10310.jpg" alt="VID-20260207-WA0026_exported_10310.jpg" loading="lazy" decoding="async" width="848" height="480">
+          </a>
+          <figcaption class="gcap">
+            <div class="gname">VID-20260207-WA0026_exported_10310.jpg</div>
+            <div class="gmeta">848×480</div>
+          </figcaption>
+        </figure>
+<figure class="gitem">
+          <a class="glink" href="assets/img/Orig/VID-20260207-WA0026_exported_15112.jpg" target="_blank" rel="noopener" data-full="assets/img/Orig/VID-20260207-WA0026_exported_15112.jpg" data-name="VID-20260207-WA0026_exported_15112.jpg" data-dim="848×480">
+            <img src="assets/img/Orig/VID-20260207-WA0026_exported_15112.jpg" alt="VID-20260207-WA0026_exported_15112.jpg" loading="lazy" decoding="async" width="848" height="480">
+          </a>
+          <figcaption class="gcap">
+            <div class="gname">VID-20260207-WA0026_exported_15112.jpg</div>
+            <div class="gmeta">848×480</div>
+          </figcaption>
+        </figure>
+<figure class="gitem">
+          <a class="glink" href="assets/img/Orig/VID-20260207-WA0030_exported_2628.jpg" target="_blank" rel="noopener" data-full="assets/img/Orig/VID-20260207-WA0030_exported_2628.jpg" data-name="VID-20260207-WA0030_exported_2628.jpg" data-dim="480×848">
+            <img src="assets/img/Orig/VID-20260207-WA0030_exported_2628.jpg" alt="VID-20260207-WA0030_exported_2628.jpg" loading="lazy" decoding="async" width="480" height="848">
+          </a>
+          <figcaption class="gcap">
+            <div class="gname">VID-20260207-WA0030_exported_2628.jpg</div>
+            <div class="gmeta">480×848</div>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container narrow">
+        <div class="hr"></div>
+        <p><a href="./">Home</a> | <a href="credits/">Credits and licences</a></p>
+      </div>
+    </footer>
+  </main>
+
+  <div class="lightbox" id="lightbox" hidden aria-hidden="true">
+    <div class="lightbox-inner" role="dialog" aria-modal="true" aria-label="Image viewer">
+      <div class="lightbox-top">
+        <div class="lb-meta" id="lbMeta"></div>
+        <div style="display:flex; gap:10px; align-items:center;">
+          <a class="lb-link" id="lbOpen" href="#" target="_blank" rel="noopener">Open</a>
+          <button class="lb-btn" id="lbClose" type="button">Close</button>
+        </div>
+      </div>
+      <img id="lbImg" src="" alt="">
+    </div>
+  </div>
+
+  <script>
+    (function(){
+      const lightbox = document.getElementById('lightbox');
+      const lbImg = document.getElementById('lbImg');
+      const lbMeta = document.getElementById('lbMeta');
+      const lbClose = document.getElementById('lbClose');
+      const lbOpen = document.getElementById('lbOpen');
+      const links = Array.from(document.querySelectorAll('#gallery a.glink'));
+
+      function openLB(href, name, dim){
+        lbImg.src = href;
+        lbImg.alt = name || 'Image';
+        lbMeta.textContent = (name ? name : '') + (dim ? (' • ' + dim) : '');
+        lbOpen.href = href;
+        lightbox.hidden = false;
+        lightbox.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeLB(){
+        lightbox.hidden = true;
+        lightbox.setAttribute('aria-hidden', 'true');
+        lbImg.src = '';
+        document.body.style.overflow = '';
+      }
+
+      links.forEach(a => {
+        a.addEventListener('click', (e) => {
+          e.preventDefault();
+          openLB(a.getAttribute('data-full') || a.href, a.dataset.name, a.dataset.dim);
+        });
+      });
+
+      lbClose.addEventListener('click', closeLB);
+      lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) closeLB();
+      });
+      document.addEventListener('keydown', (e) => {
+        if (!lightbox.hidden && e.key === 'Escape') closeLB();
+      });
+    })();
+  </script>
+</body>
+</html>

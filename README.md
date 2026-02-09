@@ -1,14 +1,10 @@
-# Pond Inlet Gospel
-
-A lightweight, static site (text + images only)
-## What’s included
+# Pond Inlet Gospel - What’s included
 
 - `index.html` - start page with a short Gospel summary and links to verse pages
-- `v/<verse>/` - individual verse pages (full KJV verse + explanation)
+- `v/<verse>/` - individual verse pages
 - `credits/` - photo credits and licences
-- `assets/` - CSS, images, icons
+- `assets/` - CSS, images, icons, js
 
-No analytics, no audio or video, no external scripts.
 
 ## Test locally Python
 From this folder:
