@@ -339,3 +339,23 @@ main{padding: 18px 0 54px}
 }
 .footer a{color: var(--muted)}
 .footer a:hover{color: var(--text)}
+
+/* Verse pages: show the full photo (no cropping), consistent sizing */
+.hero.hero--verse{
+  max-width: 700px;          /* matches .narrow; change to 980px if you want wider */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero.hero--verse img{
+  height: auto !important;   /* override fixed banner heights */
+  width: 100%;
+  aspect-ratio: 4 / 3;       /* consistent across verse pages (matches 1600x1200 / 900x675) */
+  object-fit: contain;       /* show the entire image */
+  background: #000;          /* fills any unused space (letterboxing) */
+}
+
+.hero.hero--verse::after{
+  /* lighter overlay so it doesn't dim the whole photo too much */
+  background: linear-gradient(to top, rgba(0,0,0,.60), rgba(0,0,0,.10) 60%, rgba(0,0,0,0));
+}

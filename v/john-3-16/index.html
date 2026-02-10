@@ -12,11 +12,11 @@
 <body>
 <a class="skip" href="#content">Skip to content</a>
 
-<section class="hero" aria-label="Pond Inlet photo">
+<section class="hero hero--verse" aria-label="Pond Inlet photo">
   <picture>
-    <source srcset="../../assets/img/pi-1-1800.jpg" media="(min-width: 900px)"/>
-    <source srcset="../../assets/img/pi-1-900.jpg" media="(max-width: 899px)"/>
-    <img src="../../assets/img/pi-1-900.jpg" alt="Pond Inlet area, Nunavut (photo)"/>
+    <source srcset="../../assets/img/john-3-16-1600.jpg" media="(min-width: 900px)"/>
+    <source srcset="../../assets/img/john-3-16-900.jpg" media="(max-width: 899px)"/>
+    <img src="../../assets/img/john-3-16-900.jpg" alt="Pond Inlet area, Nunavut (photo)"/>
   </picture>
   <div class="hero-inner">
     <div class="hero-text">
@@ -37,9 +37,14 @@
             <p class="text">For God so loved the world, that he gave his only begotten Son, that whosoever believeth in him should not perish, but have everlasting life.</p>
           </div>
 
-          <div class="verseblock inuktitut" aria-label="John 3:16 EAIB">
-            <p class="ref">ᐃᓄᒃᑎᑐᑦ (Inuktitut) - EAIB</p>
-            <p class="text">ᒎᑎᐅᑉ ᓯᓚᕐᔪᐊᕐᒥᐅᑦ ᓇᒡᓕᒋᓪᓚᕆᒃᑲᒥᒋᑦ ᐃᕐᓂᑐᐊᓂ ᑐᓂᓚᐅᕐᐹ, ᑕᒪᕐᒥᒃ ᑖᑦᓱᒧᖓ ᐅᒃᐱᕐᑐᑦ ᐊᓯᐅᖁᓇᒋᑦ ᓄᖑᓱᐃᑦᑐᒥᒡᓕ ᐃᓅᓯᖃᖁᓪᓗᒋᑦ.</p>
+          <div class="verseblock inuktitut syllabic" aria-label="John 3:16">
+            <p class="ref">ᔪᐊᓇᓯ 3:16</p>
+            <p class="text">ᒎᑎᐅᑉ ᓄᓇᕐᔪᐊᕐᒥᐅᑦ ᓇᒡᓕᒋᓪᓚᕆᒃᑲᒥᒋᑦ ᐃᕐᓂᑐᐊᓂ ᑐᓂᓚᐅᖅᐹ,  ᑕᒪᕐᒥᒃ ᑖᔅᓱᒧᖓ ᐅᒃᐱᕈᓱᒃᑐᑦ  ᐊᓯᐅᖁᓇᒋᑦ ᓄᖑᓱᐃᑦᑐᒥᒡᓕ ᐃᓅᓯᖃᖁᓪᓗᒋᑦ.</p>
+          </div>
+
+            <div class="verseblock inuktitut" aria-label="John 3:16">
+            <p class="ref">Juanasi 3:16</p>
+            <p class="text">Guutiup nunarjuarmiut nagligillarikkamigit irnituani tunilauqpaa, tamarmik taassumunga ukpirusuktut asiuqunagit nungusuittumigli inuusiqaqullugit.</p>
           </div>
 
           <div class="hr"></div>
@@ -55,11 +60,13 @@
             <li>Trust Him personally.</li>
           </ul>
 
-          <div class="nav3" aria-label="Page navigation">
-            <a class="btn ghost" href="../john-5-24/">Previous</a>
-            <a class="btn" href="../../">Home</a>
-            <a class="btn ghost" href="../romans-6-23/">Next</a>
-          </div>
+<div class="nav3" aria-label="Page navigation">
+  <a class="btn ghost" id="prevLink" href="#">Previous</a>
+  <a class="btn" href="../../">Home</a>
+  <a class="btn ghost" id="nextLink" href="#">Next</a>
+</div>
+
+<script src="../../assets/js/verse-nav.js" defer></script>
         </section>
 
       </div>
