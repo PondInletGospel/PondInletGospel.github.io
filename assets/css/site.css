@@ -359,3 +359,29 @@ main{padding: 18px 0 54px}
   /* lighter overlay so it doesn't dim the whole photo too much */
   background: linear-gradient(to top, rgba(0,0,0,.60), rgba(0,0,0,.10) 60%, rgba(0,0,0,0));
 }
+
+/* Responsive YouTube embeds (privacy-respecting with youtube-nocookie) */
+.video-wrap{
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  background: #000;
+}
+.video{
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+}
+.video iframe{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* Center specific button rows (used on the Videos block) */
+.btnrow.center{
+  justify-content: center;
+}

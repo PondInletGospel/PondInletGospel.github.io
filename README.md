@@ -1,7 +1,8 @@
 # Pond Inlet Gospel - What’s included
 
-- `index.html` - start page with a short Gospel summary and links to verse pages
+- `index.html` - start page with a short Gospel summary and links to verse pages and Videos
 - `v/<verse>/` - individual verse pages
+- `video/<video>/` - individual video pages (Youtube Embeds)
 - `credits/` - photo credits and licences
 - `assets/` - CSS, images, icons, js
 
