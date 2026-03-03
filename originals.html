@@ -3,20 +3,70 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Original Photos</title>
+  <title>Original Images</title>
   <link rel="stylesheet" href="assets/css/site.css" />
   <style>
-    /* Gallery-only page (root). Generated 2026-02-09 23:42:40 */
+
     main{padding: 18px 0 54px}
     .pagehead h1{margin:0 0 6px; font-size: 22px}
     .pagehead p{margin:0; color: var(--muted)}
 
-    .gallery-grid{
-      display:grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    .sets{
+      display:flex;
+      flex-direction:column;
       gap: 14px;
       margin-top: 14px;
     }
+
+    .set{
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      background: rgba(255,255,255,.55);
+      overflow:hidden;
+    }
+    @media (prefers-color-scheme: dark){
+      .set{ background: rgba(255,255,255,.05); }
+    }
+
+    .sethead{
+      padding: 12px 14px;
+      display:flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+    .settitle{
+      margin:0;
+      font-weight: 850;
+      letter-spacing: .2px;
+      font-size: 14px;
+      color: var(--text);
+      font-variant-numeric: tabular-nums;
+    }
+    .settitle .num{
+      display:inline-block;
+      min-width: 3.2ch;
+      font-weight: 900;
+    }
+    .setmeta{
+      margin:0;
+      font-size: 12.5px;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+
+    .setgrid{
+      padding: 12px;
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+    @media (min-width: 780px){
+      .setgrid{ grid-template-columns: repeat(3, 1fr); }
+    }
+
+    /* Tile styling kept consistent with prior originals.html */
     .gitem{
       margin:0;
       border: 1px solid var(--border);
@@ -28,27 +78,38 @@
     @media (prefers-color-scheme: dark){
       .gitem{ box-shadow: 0 10px 26px rgba(0,0,0,.20); }
     }
+
     .gitem img{
       width:100%;
       height: 220px;
       object-fit: cover;
       display:block;
+      background:#000;
     }
     @media (min-width: 860px){
-      .gitem img{ height: 260px; }
+      .gitem img{ height: 240px; }
     }
+
     .gcap{
       padding: 10px 12px;
       font-size: 13px;
       color: var(--muted);
       line-height: 1.35;
       display:flex;
-      align-items:baseline;
+      align-items:flex-start;
       justify-content:space-between;
       gap: 10px;
     }
     .gname{ font-weight: 650; color: var(--text); }
-    .gmeta{ font-variant-numeric: tabular-nums; white-space: nowrap; }
+    .gfolder{
+      display:inline-block;
+      font-size: 11px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin: 2px 0;
+    }
+    .gmeta{ font-variant-numeric: tabular-nums; white-space: nowrap; padding-top: 2px; }
 
     /* Lightbox */
     .lightbox[hidden]{ display:none; }
@@ -115,396 +176,383 @@
   <main id="main" class="container narrow">
     <section class="card">
       <div class="pagehead">
-        <h1>Original Photos</h1>
-        <p>Showing image(s) from <code>assets/img/Orig/</code>. Tap any image to view full size.</p>
+        <h1>Images</h1>
+        <p>
+          Showing image(s) grouped by filename.
+          Click any image to view full size.
+        </p>
       </div>
 
-      <div class="gallery-grid" id="gallery">
-<figure class="gitem">
-          <a class="glink" href="assets/img/Orig/IMG-20260206-WA0027.jpg" target="_blank" rel="noopener" data-full="assets/img/Orig/IMG-20260206-WA0027.jpg" data-name="IMG-20260206-WA0027.jpg" data-dim="1600×1200">
-            <img src="assets/img/Orig/IMG-20260206-WA0027.jpg" alt="IMG-20260206-WA0027.jpg" loading="lazy" decoding="async" width="1600" height="1200">
-          </a>
-          <figcaption class="gcap">
-            <div class="gname">001<br>IMG-20260206-WA0027.jpg</div>
-            <div class="gmeta">1600×1200</div>
-          </figcaption>
-        </figure>
-<figure class="gitem">
-          <a class="glink" href="assets/img/Orig/IMG-20260206-WA0028.jpg" target="_blank" rel="noopener" data-full="assets/img/Orig/IMG-20260206-WA0028.jpg" data-name="IMG-20260206-WA0028.jpg" data-dim="1200×1600">
-            <img src="assets/img/Orig/IMG-20260206-WA0028.jpg" alt="IMG-20260206-WA0028.jpg" loading="lazy" decoding="async" width="1200" height="1600">
-          </a>
-          <figcaption class="gcap">
-            <div class="gname">002<br>IMG-20260206-WA0028.jpg</div>
-            <div class="gmeta">1200×1600</div>
-          </figcaption>
-        </figure>
-<figure class="gitem">
-          <a class="glink" href="assets/img/Orig/IMG-20260206-WA0029.jpg" target="_blank" rel="noopener" data-full="assets/img/Orig/IMG-20260206-WA0029.jpg" data-name="IMG-20260206-WA0029.jpg" data-dim="1200×1600">
-            <img src="assets/img/Orig/IMG-20260206-WA0029.jpg" alt="IMG-20260206-WA0029.jpg" loading="lazy" decoding="async" width="1200" height="1600">
-          </a>
-          <figcaption class="gcap">
-            <div class="gname">003<br>IMG-20260206-WA0029.jpg</div>
-            <div class="gmeta">1200×1600</div>
-          </figcaption>
-        </figure>
-<figure class="gitem">
-          <a class="glink" href="assets/img/Orig/IMG-20260207-WA0003.jpg" target="_blank" rel="noopener" data-full="assets/img/Orig/IMG-20260207-WA0003.jpg" data-name="IMG-20260207-WA0003.jpg" data-dim="1600×1200">
-            <img src="assets/img/Orig/IMG-20260207-WA0003.jpg" alt="IMG-20260207-WA0003.jpg" loading="lazy" decoding="async" width="1600" height="1200">
-          </a>
-          <figcaption class="gcap">
-            <div class="gname">004<br>IMG-20260207-WA0003.jpg</div>
-            <div class="gmeta">1600×1200</div>
-          </figcaption>
-        </figure>
-<figure class="gitem">
-          <a class="glink" href="assets/img/Orig/IMG-20260207-WA0012.jpg" target="_blank" rel="noopener" data-full="assets/img/Orig/IMG-20260207-WA0012.jpg" data-name="IMG-20260207-WA0012.jpg" data-dim="1600×1200">
-            <img src="assets/img/Orig/IMG-20260207-WA0012.jpg" alt="IMG-20260207-WA0012.jpg" loading="lazy" decoding="async" width="1600" height="1200">
-          </a>
-          <figcaption class="gcap">
-            <div class="gname">005<br>IMG-20260207-WA0012.jpg</div>
-            <div class="gmeta">1600×1200</div>
-          </figcaption>
-        </figure>
-<figure class="gitem">
-          <a class="glink" href="assets/img/Orig/IMG-20260207-WA0014.jpg" target="_blank" rel="noopener" data-full="assets/img/Orig/IMG-20260207-WA0014.jpg" data-name="IMG-20260207-WA0014.jpg" data-dim="1200×1600">
-            <img src="assets/img/Orig/IMG-20260207-WA0014.jpg" alt="IMG-20260207-WA0014.jpg" loading="lazy" decoding="async" width="1200" height="1600">
-          </a>
-          <figcaption class="gcap">
-            <div class="gname">006<br>IMG-20260207-WA0014.jpg</div>
-            <div class="gmeta">1200×1600</div>
-          </figcaption>
-        </figure>
-<figure class="gitem">
-          <a class="glink" href="assets/img/Orig/IMG-20260207-WA0015.jpg" target="_blank" rel="noopener" data-full="assets/img/Orig/IMG-20260207-WA0015.jpg" data-name="IMG-20260207-WA0015.jpg" data-dim="1600×1200">
-            <img src="assets/img/Orig/IMG-20260207-WA0015.jpg" alt="IMG-20260207-WA0015.jpg" loading="lazy" decoding="async" width="1600" height="1200">
-          </a>
-          <figcaption class="gcap">
-            <div class="gname">007<br>IMG-20260207-WA0015.jpg</div>
-            <div class="gmeta">1600×1200</div>
-          </figcaption>
-        </figure>
-<figure class="gitem">
-          <a class="glink" href="assets/img/Orig/IMG-20260207-WA0016.jpg" target="_blank" rel="noopener" data-full="assets/img/Orig/IMG-20260207-WA0016.jpg" data-name="IMG-20260207-WA0016.jpg" data-dim="1600×1200">
-            <img src="assets/img/Orig/IMG-20260207-WA0016.jpg" alt="IMG-20260207-WA0016.jpg" loading="lazy" decoding="async" width="1600" height="1200">
-          </a>
-          <figcaption class="gcap">
-            <div class="gname">008<br>IMG-20260207-WA0016.jpg</div>
-            <div class="gmeta">1600×1200</div>
-          </figcaption>
-        </figure>
-<figure class="gitem">
-          <a class="glink" href="assets/img/Orig/IMG-20260207-WA0017.jpg" target="_blank" rel="noopener" data-full="assets/img/Orig/IMG-20260207-WA0017.jpg" data-name="IMG-20260207-WA0017.jpg" data-dim="1206×1600">
-            <img src="assets/img/Orig/IMG-20260207-WA0017.jpg" alt="IMG-20260207-WA0017.jpg" loading="lazy" decoding="async" width="1206" height="1600">
-          </a>
-          <figcaption class="gcap">
-            <div class="gname">009<br>IMG-20260207-WA0017.jpg</div>
-            <div class="gmeta">1206×1600</div>
-          </figcaption>
-        </figure>
-<figure class="gitem">
-          <a class="glink" href="assets/img/Orig/IMG-20260207-WA0018.jpg" target="_blank" rel="noopener" data-full="assets/img/Orig/IMG-20260207-WA0018.jpg" data-name="IMG-20260207-WA0018.jpg" data-dim="1200×1600">
-            <img src="assets/img/Orig/IMG-20260207-WA0018.jpg" alt="IMG-20260207-WA0018.jpg" loading="lazy" decoding="async" width="1200" height="1600">
-          </a>
-          <figcaption class="gcap">
-            <div class="gname">010<br>IMG-20260207-WA0018.jpg</div>
-            <div class="gmeta">1200×1600</div>
-          </figcaption>
-        </figure>
-<figure class="gitem">
-          <a class="glink" href="assets/img/Orig/IMG-20260207-WA0020.jpg" target="_blank" rel="noopener" data-full="assets/img/Orig/IMG-20260207-WA0020.jpg" data-name="IMG-20260207-WA0020.jpg" data-dim="1200×1600">
-            <img src="assets/img/Orig/IMG-20260207-WA0020.jpg" alt="IMG-20260207-WA0020.jpg" loading="lazy" decoding="async" width="1200" height="1600">
-          </a>
-          <figcaption class="gcap">
-            <div class="gname">011<br>IMG-20260207-WA0020.jpg</div>
-            <div class="gmeta">1200×1600</div>
-          </figcaption>
-        </figure>
-<figure class="gitem">
-          <a class="glink" href="assets/img/Orig/IMG-20260207-WA0022.jpg" target="_blank" rel="noopener" data-full="assets/img/Orig/IMG-20260207-WA0022.jpg" data-name="IMG-20260207-WA0022.jpg" data-dim="1600×1200">
-            <img src="assets/img/Orig/IMG-20260207-WA0022.jpg" alt="IMG-20260207-WA0022.jpg" loading="lazy" decoding="async" width="1600" height="1200">
-          </a>
-          <figcaption class="gcap">
-            <div class="gname">012<br>IMG-20260207-WA0022.jpg</div>
-            <div class="gmeta">1600×1200</div>
-          </figcaption>
-        </figure>
-<figure class="gitem">
-          <a class="glink" href="assets/img/Orig/IMG-20260207-WA0023.jpg" target="_blank" rel="noopener" data-full="assets/img/Orig/IMG-20260207-WA0023.jpg" data-name="IMG-20260207-WA0023.jpg" data-dim="1280×1600">
-            <img src="assets/img/Orig/IMG-20260207-WA0023.jpg" alt="IMG-20260207-WA0023.jpg" loading="lazy" decoding="async" width="1280" height="1600">
-          </a>
-          <figcaption class="gcap">
-            <div class="gname">013<br>IMG-20260207-WA0023.jpg</div>
-            <div class="gmeta">1280×1600</div>
-          </figcaption>
-        </figure>
-<figure class="gitem">
-          <a class="glink" href="assets/img/Orig/IMG-20260207-WA0027.jpg" target="_blank" rel="noopener" data-full="assets/img/Orig/IMG-20260207-WA0027.jpg" data-name="IMG-20260207-WA0027.jpg" data-dim="1200×1600">
-            <img src="assets/img/Orig/IMG-20260207-WA0027.jpg" alt="IMG-20260207-WA0027.jpg" loading="lazy" decoding="async" width="1200" height="1600">
-          </a>
-          <figcaption class="gcap">
-            <div class="gname">014<br>IMG-20260207-WA0027.jpg</div>
-            <div class="gmeta">1200×1600</div>
-          </figcaption>
-        </figure>
-<figure class="gitem">
-          <a class="glink" href="assets/img/Orig/IMG-20260207-WA0028.jpg" target="_blank" rel="noopener" data-full="assets/img/Orig/IMG-20260207-WA0028.jpg" data-name="IMG-20260207-WA0028.jpg" data-dim="1600×1200">
-            <img src="assets/img/Orig/IMG-20260207-WA0028.jpg" alt="IMG-20260207-WA0028.jpg" loading="lazy" decoding="async" width="1600" height="1200">
-          </a>
-          <figcaption class="gcap">
-            <div class="gname">015<br>IMG-20260207-WA0028.jpg</div>
-            <div class="gmeta">1600×1200</div>
-          </figcaption>
-        </figure>
-<figure class="gitem">
-          <a class="glink" href="assets/img/Orig/IMG-20260207-WA0029.jpg" target="_blank" rel="noopener" data-full="assets/img/Orig/IMG-20260207-WA0029.jpg" data-name="IMG-20260207-WA0029.jpg" data-dim="1600×1200">
-            <img src="assets/img/Orig/IMG-20260207-WA0029.jpg" alt="IMG-20260207-WA0029.jpg" loading="lazy" decoding="async" width="1600" height="1200">
-          </a>
-          <figcaption class="gcap">
-            <div class="gname">016<br>IMG-20260207-WA0029.jpg</div>
-            <div class="gmeta">1600×1200</div>
-          </figcaption>
-        </figure>
-<figure class="gitem">
-          <a class="glink" href="assets/img/Orig/IMG-20260209-WA0008.jpg" target="_blank" rel="noopener" data-full="assets/img/Orig/IMG-20260209-WA0008.jpg" data-name="IMG-20260209-WA0008.jpg" data-dim="1600×1199">
-            <img src="assets/img/Orig/IMG-20260209-WA0008.jpg" alt="IMG-20260209-WA0008.jpg" loading="lazy" decoding="async" width="1600" height="1199">
-          </a>
-          <figcaption class="gcap">
-            <div class="gname">017<br>IMG-20260209-WA0008.jpg</div>
-            <div class="gmeta">1600×1199</div>
-          </figcaption>
-        </figure>
-<figure class="gitem">
-          <a class="glink" href="assets/img/Orig/IMG-20260209-WA0009.jpg" target="_blank" rel="noopener" data-full="assets/img/Orig/IMG-20260209-WA0009.jpg" data-name="IMG-20260209-WA0009.jpg" data-dim="1200×1600">
-            <img src="assets/img/Orig/IMG-20260209-WA0009.jpg" alt="IMG-20260209-WA0009.jpg" loading="lazy" decoding="async" width="1200" height="1600">
-          </a>
-          <figcaption class="gcap">
-            <div class="gname">018<br>IMG-20260209-WA0009.jpg</div>
-            <div class="gmeta">1200×1600</div>
-          </figcaption>
-        </figure>
-<figure class="gitem">
-          <a class="glink" href="assets/img/Orig/IMG-20260209-WA0010.jpg" target="_blank" rel="noopener" data-full="assets/img/Orig/IMG-20260209-WA0010.jpg" data-name="IMG-20260209-WA0010.jpg" data-dim="1600×1200">
-            <img src="assets/img/Orig/IMG-20260209-WA0010.jpg" alt="IMG-20260209-WA0010.jpg" loading="lazy" decoding="async" width="1600" height="1200">
-          </a>
-          <figcaption class="gcap">
-            <div class="gname">019<br>IMG-20260209-WA0010.jpg</div>
-            <div class="gmeta">1600×1200</div>
-          </figcaption>
-        </figure>
-<figure class="gitem">
-          <a class="glink" href="assets/img/Orig/VID-20260207-WA0004_exported_1276.jpg" target="_blank" rel="noopener" data-full="assets/img/Orig/VID-20260207-WA0004_exported_1276.jpg" data-name="VID-20260207-WA0004_exported_1276.jpg" data-dim="848×480">
-            <img src="assets/img/Orig/VID-20260207-WA0004_exported_1276.jpg" alt="VID-20260207-WA0004_exported_1276.jpg" loading="lazy" decoding="async" width="848" height="480">
-          </a>
-          <figcaption class="gcap">
-            <div class="gname">020<br>VID-20260207-WA0004_exported_1276.jpg</div>
-            <div class="gmeta">848×480</div>
-          </figcaption>
-        </figure>
-<figure class="gitem">
-          <a class="glink" href="assets/img/Orig/VID-20260207-WA0005_exported_305.jpg" target="_blank" rel="noopener" data-full="assets/img/Orig/VID-20260207-WA0005_exported_305.jpg" data-name="VID-20260207-WA0005_exported_305.jpg" data-dim="480×848">
-            <img src="assets/img/Orig/VID-20260207-WA0005_exported_305.jpg" alt="VID-20260207-WA0005_exported_305.jpg" loading="lazy" decoding="async" width="480" height="848">
-          </a>
-          <figcaption class="gcap">
-            <div class="gname">021<br>VID-20260207-WA0005_exported_305.jpg</div>
-            <div class="gmeta">480×848</div>
-          </figcaption>
-        </figure>
-<figure class="gitem">
-          <a class="glink" href="assets/img/Orig/VID-20260207-WA0006_exported_14764.jpg" target="_blank" rel="noopener" data-full="assets/img/Orig/VID-20260207-WA0006_exported_14764.jpg" data-name="VID-20260207-WA0006_exported_14764.jpg" data-dim="480×848">
-            <img src="assets/img/Orig/VID-20260207-WA0006_exported_14764.jpg" alt="VID-20260207-WA0006_exported_14764.jpg" loading="lazy" decoding="async" width="480" height="848">
-          </a>
-          <figcaption class="gcap">
-            <div class="gname">022<br>VID-20260207-WA0006_exported_14764.jpg</div>
-            <div class="gmeta">480×848</div>
-          </figcaption>
-        </figure>
-<figure class="gitem">
-          <a class="glink" href="assets/img/Orig/VID-20260207-WA0006_exported_5548.jpg" target="_blank" rel="noopener" data-full="assets/img/Orig/VID-20260207-WA0006_exported_5548.jpg" data-name="VID-20260207-WA0006_exported_5548.jpg" data-dim="480×848">
-            <img src="assets/img/Orig/VID-20260207-WA0006_exported_5548.jpg" alt="VID-20260207-WA0006_exported_5548.jpg" loading="lazy" decoding="async" width="480" height="848">
-          </a>
-          <figcaption class="gcap">
-            <div class="gname">023<br>VID-20260207-WA0006_exported_5548.jpg</div>
-            <div class="gmeta">480×848</div>
-          </figcaption>
-        </figure>
-<figure class="gitem">
-          <a class="glink" href="assets/img/Orig/VID-20260207-WA0006_exported_7797.jpg" target="_blank" rel="noopener" data-full="assets/img/Orig/VID-20260207-WA0006_exported_7797.jpg" data-name="VID-20260207-WA0006_exported_7797.jpg" data-dim="480×848">
-            <img src="assets/img/Orig/VID-20260207-WA0006_exported_7797.jpg" alt="VID-20260207-WA0006_exported_7797.jpg" loading="lazy" decoding="async" width="480" height="848">
-          </a>
-          <figcaption class="gcap">
-            <div class="gname">024<br>VID-20260207-WA0006_exported_7797.jpg</div>
-            <div class="gmeta">480×848</div>
-          </figcaption>
-        </figure>
-<figure class="gitem">
-          <a class="glink" href="assets/img/Orig/VID-20260207-WA0007_exported_2788.jpg" target="_blank" rel="noopener" data-full="assets/img/Orig/VID-20260207-WA0007_exported_2788.jpg" data-name="VID-20260207-WA0007_exported_2788.jpg" data-dim="480×848">
-            <img src="assets/img/Orig/VID-20260207-WA0007_exported_2788.jpg" alt="VID-20260207-WA0007_exported_2788.jpg" loading="lazy" decoding="async" width="480" height="848">
-          </a>
-          <figcaption class="gcap">
-            <div class="gname">025<br>VID-20260207-WA0007_exported_2788.jpg</div>
-            <div class="gmeta">480×848</div>
-          </figcaption>
-        </figure>
-<figure class="gitem">
-          <a class="glink" href="assets/img/Orig/VID-20260207-WA0008_exported_176.jpg" target="_blank" rel="noopener" data-full="assets/img/Orig/VID-20260207-WA0008_exported_176.jpg" data-name="VID-20260207-WA0008_exported_176.jpg" data-dim="480×848">
-            <img src="assets/img/Orig/VID-20260207-WA0008_exported_176.jpg" alt="VID-20260207-WA0008_exported_176.jpg" loading="lazy" decoding="async" width="480" height="848">
-          </a>
-          <figcaption class="gcap">
-            <div class="gname">026<br>VID-20260207-WA0008_exported_176.jpg</div>
-            <div class="gmeta">480×848</div>
-          </figcaption>
-        </figure>
-<figure class="gitem">
-          <a class="glink" href="assets/img/Orig/VID-20260207-WA0009_exported_0.jpg" target="_blank" rel="noopener" data-full="assets/img/Orig/VID-20260207-WA0009_exported_0.jpg" data-name="VID-20260207-WA0009_exported_0.jpg" data-dim="480×848">
-            <img src="assets/img/Orig/VID-20260207-WA0009_exported_0.jpg" alt="VID-20260207-WA0009_exported_0.jpg" loading="lazy" decoding="async" width="480" height="848">
-          </a>
-          <figcaption class="gcap">
-            <div class="gname">027<br>VID-20260207-WA0009_exported_0.jpg</div>
-            <div class="gmeta">480×848</div>
-          </figcaption>
-        </figure>
-<figure class="gitem">
-          <a class="glink" href="assets/img/Orig/VID-20260207-WA0010_exported_4250.jpg" target="_blank" rel="noopener" data-full="assets/img/Orig/VID-20260207-WA0010_exported_4250.jpg" data-name="VID-20260207-WA0010_exported_4250.jpg" data-dim="480×848">
-            <img src="assets/img/Orig/VID-20260207-WA0010_exported_4250.jpg" alt="VID-20260207-WA0010_exported_4250.jpg" loading="lazy" decoding="async" width="480" height="848">
-          </a>
-          <figcaption class="gcap">
-            <div class="gname">028<br>VID-20260207-WA0010_exported_4250.jpg</div>
-            <div class="gmeta">480×848</div>
-          </figcaption>
-        </figure>
-<figure class="gitem">
-          <a class="glink" href="assets/img/Orig/VID-20260207-WA0010_exported_8228.jpg" target="_blank" rel="noopener" data-full="assets/img/Orig/VID-20260207-WA0010_exported_8228.jpg" data-name="VID-20260207-WA0010_exported_8228.jpg" data-dim="480×848">
-            <img src="assets/img/Orig/VID-20260207-WA0010_exported_8228.jpg" alt="VID-20260207-WA0010_exported_8228.jpg" loading="lazy" decoding="async" width="480" height="848">
-          </a>
-          <figcaption class="gcap">
-            <div class="gname">029<br>VID-20260207-WA0010_exported_8228.jpg</div>
-            <div class="gmeta">480×848</div>
-          </figcaption>
-        </figure>
-<figure class="gitem">
-          <a class="glink" href="assets/img/Orig/VID-20260207-WA0011_exported_16594.jpg" target="_blank" rel="noopener" data-full="assets/img/Orig/VID-20260207-WA0011_exported_16594.jpg" data-name="VID-20260207-WA0011_exported_16594.jpg" data-dim="480×848">
-            <img src="assets/img/Orig/VID-20260207-WA0011_exported_16594.jpg" alt="VID-20260207-WA0011_exported_16594.jpg" loading="lazy" decoding="async" width="480" height="848">
-          </a>
-          <figcaption class="gcap">
-            <div class="gname">030<br>VID-20260207-WA0011_exported_16594.jpg</div>
-            <div class="gmeta">480×848</div>
-          </figcaption>
-        </figure>
-<figure class="gitem">
-          <a class="glink" href="assets/img/Orig/VID-20260207-WA0011_exported_4806.jpg" target="_blank" rel="noopener" data-full="assets/img/Orig/VID-20260207-WA0011_exported_4806.jpg" data-name="VID-20260207-WA0011_exported_4806.jpg" data-dim="480×848">
-            <img src="assets/img/Orig/VID-20260207-WA0011_exported_4806.jpg" alt="VID-20260207-WA0011_exported_4806.jpg" loading="lazy" decoding="async" width="480" height="848">
-          </a>
-          <figcaption class="gcap">
-            <div class="gname">031<br>VID-20260207-WA0011_exported_4806.jpg</div>
-            <div class="gmeta">480×848</div>
-          </figcaption>
-        </figure>
-<figure class="gitem">
-          <a class="glink" href="assets/img/Orig/VID-20260207-WA0013_exported_1130.jpg" target="_blank" rel="noopener" data-full="assets/img/Orig/VID-20260207-WA0013_exported_1130.jpg" data-name="VID-20260207-WA0013_exported_1130.jpg" data-dim="480×848">
-            <img src="assets/img/Orig/VID-20260207-WA0013_exported_1130.jpg" alt="VID-20260207-WA0013_exported_1130.jpg" loading="lazy" decoding="async" width="480" height="848">
-          </a>
-          <figcaption class="gcap">
-            <div class="gname">032<br>VID-20260207-WA0013_exported_1130.jpg</div>
-            <div class="gmeta">480×848</div>
-          </figcaption>
-        </figure>
-<figure class="gitem">
-          <a class="glink" href="assets/img/Orig/VID-20260207-WA0013_exported_5781.jpg" target="_blank" rel="noopener" data-full="assets/img/Orig/VID-20260207-WA0013_exported_5781.jpg" data-name="VID-20260207-WA0013_exported_5781.jpg" data-dim="480×848">
-            <img src="assets/img/Orig/VID-20260207-WA0013_exported_5781.jpg" alt="VID-20260207-WA0013_exported_5781.jpg" loading="lazy" decoding="async" width="480" height="848">
-          </a>
-          <figcaption class="gcap">
-            <div class="gname">033<br>VID-20260207-WA0013_exported_5781.jpg</div>
-            <div class="gmeta">480×848</div>
-          </figcaption>
-        </figure>
-<figure class="gitem">
-          <a class="glink" href="assets/img/Orig/VID-20260207-WA0019_exported_3128.jpg" target="_blank" rel="noopener" data-full="assets/img/Orig/VID-20260207-WA0019_exported_3128.jpg" data-name="VID-20260207-WA0019_exported_3128.jpg" data-dim="848×480">
-            <img src="assets/img/Orig/VID-20260207-WA0019_exported_3128.jpg" alt="VID-20260207-WA0019_exported_3128.jpg" loading="lazy" decoding="async" width="848" height="480">
-          </a>
-          <figcaption class="gcap">
-            <div class="gname">034<br>VID-20260207-WA0019_exported_3128.jpg</div>
-            <div class="gmeta">848×480</div>
-          </figcaption>
-        </figure>
-<figure class="gitem">
-          <a class="glink" href="assets/img/Orig/VID-20260207-WA0021_exported_3451.jpg" target="_blank" rel="noopener" data-full="assets/img/Orig/VID-20260207-WA0021_exported_3451.jpg" data-name="VID-20260207-WA0021_exported_3451.jpg" data-dim="848×480">
-            <img src="assets/img/Orig/VID-20260207-WA0021_exported_3451.jpg" alt="VID-20260207-WA0021_exported_3451.jpg" loading="lazy" decoding="async" width="848" height="480">
-          </a>
-          <figcaption class="gcap">
-            <div class="gname">035<br>VID-20260207-WA0021_exported_3451.jpg</div>
-            <div class="gmeta">848×480</div>
-          </figcaption>
-        </figure>
-<figure class="gitem">
-          <a class="glink" href="assets/img/Orig/VID-20260207-WA0024_exported_0.jpg" target="_blank" rel="noopener" data-full="assets/img/Orig/VID-20260207-WA0024_exported_0.jpg" data-name="VID-20260207-WA0024_exported_0.jpg" data-dim="480×848">
-            <img src="assets/img/Orig/VID-20260207-WA0024_exported_0.jpg" alt="VID-20260207-WA0024_exported_0.jpg" loading="lazy" decoding="async" width="480" height="848">
-          </a>
-          <figcaption class="gcap">
-            <div class="gname">036<br>VID-20260207-WA0024_exported_0.jpg</div>
-            <div class="gmeta">480×848</div>
-          </figcaption>
-        </figure>
-<figure class="gitem">
-          <a class="glink" href="assets/img/Orig/VID-20260207-WA0024_exported_19454.jpg" target="_blank" rel="noopener" data-full="assets/img/Orig/VID-20260207-WA0024_exported_19454.jpg" data-name="VID-20260207-WA0024_exported_19454.jpg" data-dim="480×848">
-            <img src="assets/img/Orig/VID-20260207-WA0024_exported_19454.jpg" alt="VID-20260207-WA0024_exported_19454.jpg" loading="lazy" decoding="async" width="480" height="848">
-          </a>
-          <figcaption class="gcap">
-            <div class="gname">037<br>VID-20260207-WA0024_exported_19454.jpg</div>
-            <div class="gmeta">480×848</div>
-          </figcaption>
-        </figure>
-<figure class="gitem">
-          <a class="glink" href="assets/img/Orig/VID-20260207-WA0025_exported_2344.jpg" target="_blank" rel="noopener" data-full="assets/img/Orig/VID-20260207-WA0025_exported_2344.jpg" data-name="VID-20260207-WA0025_exported_2344.jpg" data-dim="480×848">
-            <img src="assets/img/Orig/VID-20260207-WA0025_exported_2344.jpg" alt="VID-20260207-WA0025_exported_2344.jpg" loading="lazy" decoding="async" width="480" height="848">
-          </a>
-          <figcaption class="gcap">
-            <div class="gname">038<br>VID-20260207-WA0025_exported_2344.jpg</div>
-            <div class="gmeta">480×848</div>
-          </figcaption>
-        </figure>
-<figure class="gitem">
-          <a class="glink" href="assets/img/Orig/VID-20260207-WA0026_exported_0.jpg" target="_blank" rel="noopener" data-full="assets/img/Orig/VID-20260207-WA0026_exported_0.jpg" data-name="VID-20260207-WA0026_exported_0.jpg" data-dim="848×480">
-            <img src="assets/img/Orig/VID-20260207-WA0026_exported_0.jpg" alt="VID-20260207-WA0026_exported_0.jpg" loading="lazy" decoding="async" width="848" height="480">
-          </a>
-          <figcaption class="gcap">
-            <div class="gname">039<br>VID-20260207-WA0026_exported_0.jpg</div>
-            <div class="gmeta">848×480</div>
-          </figcaption>
-        </figure>
-<figure class="gitem">
-          <a class="glink" href="assets/img/Orig/VID-20260207-WA0026_exported_10310.jpg" target="_blank" rel="noopener" data-full="assets/img/Orig/VID-20260207-WA0026_exported_10310.jpg" data-name="VID-20260207-WA0026_exported_10310.jpg" data-dim="848×480">
-            <img src="assets/img/Orig/VID-20260207-WA0026_exported_10310.jpg" alt="VID-20260207-WA0026_exported_10310.jpg" loading="lazy" decoding="async" width="848" height="480">
-          </a>
-          <figcaption class="gcap">
-            <div class="gname">040<br>VID-20260207-WA0026_exported_10310.jpg</div>
-            <div class="gmeta">848×480</div>
-          </figcaption>
-        </figure>
-<figure class="gitem">
-          <a class="glink" href="assets/img/Orig/VID-20260207-WA0026_exported_15112.jpg" target="_blank" rel="noopener" data-full="assets/img/Orig/VID-20260207-WA0026_exported_15112.jpg" data-name="VID-20260207-WA0026_exported_15112.jpg" data-dim="848×480">
-            <img src="assets/img/Orig/VID-20260207-WA0026_exported_15112.jpg" alt="VID-20260207-WA0026_exported_15112.jpg" loading="lazy" decoding="async" width="848" height="480">
-          </a>
-          <figcaption class="gcap">
-            <div class="gname">041<br>VID-20260207-WA0026_exported_15112.jpg</div>
-            <div class="gmeta">848×480</div>
-          </figcaption>
-        </figure>
-<figure class="gitem">
-          <a class="glink" href="assets/img/Orig/VID-20260207-WA0030_exported_2628.jpg" target="_blank" rel="noopener" data-full="assets/img/Orig/VID-20260207-WA0030_exported_2628.jpg" data-name="VID-20260207-WA0030_exported_2628.jpg" data-dim="480×848">
-            <img src="assets/img/Orig/VID-20260207-WA0030_exported_2628.jpg" alt="VID-20260207-WA0030_exported_2628.jpg" loading="lazy" decoding="async" width="480" height="848">
-          </a>
-          <figcaption class="gcap">
-            <div class="gname">042<br>VID-20260207-WA0030_exported_2628.jpg</div>
-            <div class="gmeta">480×848</div>
-          </figcaption>
-        </figure>
+      <div class="sets" id="gallery">
+
+        <!-- 001 - IMG_1731.jpg -->
+        <div class="set">
+          <div class="sethead">
+            <p class="settitle"><span class="num">001</span> IMG_1731.jpg</p>
+            <p class="setmeta">Original • 8.5x11 • 5x7</p>
+          </div>
+          <div class="setgrid">
+            <figure class="gitem">
+              <a class="glink" href="assets/img/Originals/IMG_1731.jpg" target="_blank" rel="noopener"
+                 data-full="assets/img/Originals/IMG_1731.jpg" data-folder="Original" data-name="IMG_1731.jpg" data-dim="4032×3024">
+                <img src="assets/img/Originals/IMG_1731.jpg" alt="IMG_1731.jpg" loading="lazy" decoding="async" width="4032" height="3024">
+              </a>
+              <figcaption class="gcap">
+                <div class="gname">001<br><span class="gfolder">Original</span><br>IMG_1731.jpg</div>
+                <div class="gmeta">4032×3024</div>
+              </figcaption>
+            </figure>
+            <figure class="gitem">
+              <a class="glink" href="assets/img/8.5x11/IMG_1731.jpg" target="_blank" rel="noopener"
+                 data-full="assets/img/8.5x11/IMG_1731.jpg" data-folder="8.5x11" data-name="IMG_1731.jpg" data-dim="3024×3918">
+                <img src="assets/img/8.5x11/IMG_1731.jpg" alt="IMG_1731.jpg" loading="lazy" decoding="async" width="3024" height="3918">
+              </a>
+              <figcaption class="gcap">
+                <div class="gname">001<br><span class="gfolder">8.5x11</span><br>IMG_1731.jpg</div>
+                <div class="gmeta">3024×3918</div>
+              </figcaption>
+            </figure>
+            <figure class="gitem">
+              <a class="glink" href="assets/img/5x7/IMG_1731.jpg" target="_blank" rel="noopener"
+                 data-full="assets/img/5x7/IMG_1731.jpg" data-folder="5x7" data-name="IMG_1731.jpg" data-dim="2880×4032">
+                <img src="assets/img/5x7/IMG_1731.jpg" alt="IMG_1731.jpg" loading="lazy" decoding="async" width="2880" height="4032">
+              </a>
+              <figcaption class="gcap">
+                <div class="gname">001<br><span class="gfolder">5x7</span><br>IMG_1731.jpg</div>
+                <div class="gmeta">2880×4032</div>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <!-- 002 - IMG_1768.jpg -->
+        <div class="set">
+          <div class="sethead">
+            <p class="settitle"><span class="num">002</span> IMG_1768.jpg</p>
+            <p class="setmeta">Original • 8.5x11 • 5x7</p>
+          </div>
+          <div class="setgrid">
+            <figure class="gitem">
+              <a class="glink" href="assets/img/Originals/IMG_1768.jpg" target="_blank" rel="noopener"
+                 data-full="assets/img/Originals/IMG_1768.jpg" data-folder="Original" data-name="IMG_1768.jpg" data-dim="4032×3024">
+                <img src="assets/img/Originals/IMG_1768.jpg" alt="IMG_1768.jpg" loading="lazy" decoding="async" width="4032" height="3024">
+              </a>
+              <figcaption class="gcap">
+                <div class="gname">002<br><span class="gfolder">Original</span><br>IMG_1768.jpg</div>
+                <div class="gmeta">4032×3024</div>
+              </figcaption>
+            </figure>
+            <figure class="gitem">
+              <a class="glink" href="assets/img/8.5x11/IMG_1768.jpg" target="_blank" rel="noopener"
+                 data-full="assets/img/8.5x11/IMG_1768.jpg" data-folder="8.5x11" data-name="IMG_1768.jpg" data-dim="3909×3024">
+                <img src="assets/img/8.5x11/IMG_1768.jpg" alt="IMG_1768.jpg" loading="lazy" decoding="async" width="3909" height="3024">
+              </a>
+              <figcaption class="gcap">
+                <div class="gname">002<br><span class="gfolder">8.5x11</span><br>IMG_1768.jpg</div>
+                <div class="gmeta">3909×3024</div>
+              </figcaption>
+            </figure>
+            <figure class="gitem">
+              <a class="glink" href="assets/img/5x7/IMG_1768.jpg" target="_blank" rel="noopener"
+                 data-full="assets/img/5x7/IMG_1768.jpg" data-folder="5x7" data-name="IMG_1768.jpg" data-dim="4032×2883">
+                <img src="assets/img/5x7/IMG_1768.jpg" alt="IMG_1768.jpg" loading="lazy" decoding="async" width="4032" height="2883">
+              </a>
+              <figcaption class="gcap">
+                <div class="gname">002<br><span class="gfolder">5x7</span><br>IMG_1768.jpg</div>
+                <div class="gmeta">4032×2883</div>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <!-- 003 - IMG_1772.jpg -->
+        <div class="set">
+          <div class="sethead">
+            <p class="settitle"><span class="num">003</span> IMG_1772.jpg</p>
+            <p class="setmeta">Original • 8.5x11 • 5x7</p>
+          </div>
+          <div class="setgrid">
+            <figure class="gitem">
+              <a class="glink" href="assets/img/Originals/IMG_1772.jpg" target="_blank" rel="noopener"
+                 data-full="assets/img/Originals/IMG_1772.jpg" data-folder="Original" data-name="IMG_1772.jpg" data-dim="4032×3024">
+                <img src="assets/img/Originals/IMG_1772.jpg" alt="IMG_1772.jpg" loading="lazy" decoding="async" width="4032" height="3024">
+              </a>
+              <figcaption class="gcap">
+                <div class="gname">003<br><span class="gfolder">Original</span><br>IMG_1772.jpg</div>
+                <div class="gmeta">4032×3024</div>
+              </figcaption>
+            </figure>
+            <figure class="gitem">
+              <a class="glink" href="assets/img/8.5x11/IMG_1772.jpg" target="_blank" rel="noopener"
+                 data-full="assets/img/8.5x11/IMG_1772.jpg" data-folder="8.5x11" data-name="IMG_1772.jpg" data-dim="3909×3020">
+                <img src="assets/img/8.5x11/IMG_1772.jpg" alt="IMG_1772.jpg" loading="lazy" decoding="async" width="3909" height="3020">
+              </a>
+              <figcaption class="gcap">
+                <div class="gname">003<br><span class="gfolder">8.5x11</span><br>IMG_1772.jpg</div>
+                <div class="gmeta">3909×3020</div>
+              </figcaption>
+            </figure>
+            <figure class="gitem">
+              <a class="glink" href="assets/img/5x7/IMG_1772.jpg" target="_blank" rel="noopener"
+                 data-full="assets/img/5x7/IMG_1772.jpg" data-folder="5x7" data-name="IMG_1772.jpg" data-dim="4032×2882">
+                <img src="assets/img/5x7/IMG_1772.jpg" alt="IMG_1772.jpg" loading="lazy" decoding="async" width="4032" height="2882">
+              </a>
+              <figcaption class="gcap">
+                <div class="gname">003<br><span class="gfolder">5x7</span><br>IMG_1772.jpg</div>
+                <div class="gmeta">4032×2882</div>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <!-- 004 - IMG_2400.jpg -->
+        <div class="set">
+          <div class="sethead">
+            <p class="settitle"><span class="num">004</span> IMG_2400.jpg</p>
+            <p class="setmeta">Original • 8.5x11 • 5x7</p>
+          </div>
+          <div class="setgrid">
+            <figure class="gitem">
+              <a class="glink" href="assets/img/Originals/IMG_2400.jpg" target="_blank" rel="noopener"
+                 data-full="assets/img/Originals/IMG_2400.jpg" data-folder="Original" data-name="IMG_2400.jpg" data-dim="4032×3024">
+                <img src="assets/img/Originals/IMG_2400.jpg" alt="IMG_2400.jpg" loading="lazy" decoding="async" width="4032" height="3024">
+              </a>
+              <figcaption class="gcap">
+                <div class="gname">004<br><span class="gfolder">Original</span><br>IMG_2400.jpg</div>
+                <div class="gmeta">4032×3024</div>
+              </figcaption>
+            </figure>
+            <figure class="gitem">
+              <a class="glink" href="assets/img/8.5x11/IMG_2400.jpg" target="_blank" rel="noopener"
+                 data-full="assets/img/8.5x11/IMG_2400.jpg" data-folder="8.5x11" data-name="IMG_2400.jpg" data-dim="3024×3918">
+                <img src="assets/img/8.5x11/IMG_2400.jpg" alt="IMG_2400.jpg" loading="lazy" decoding="async" width="3024" height="3918">
+              </a>
+              <figcaption class="gcap">
+                <div class="gname">004<br><span class="gfolder">8.5x11</span><br>IMG_2400.jpg</div>
+                <div class="gmeta">3024×3918</div>
+              </figcaption>
+            </figure>
+            <figure class="gitem">
+              <a class="glink" href="assets/img/5x7/IMG_2400.jpg" target="_blank" rel="noopener"
+                 data-full="assets/img/5x7/IMG_2400.jpg" data-folder="5x7" data-name="IMG_2400.jpg" data-dim="2875×4032">
+                <img src="assets/img/5x7/IMG_2400.jpg" alt="IMG_2400.jpg" loading="lazy" decoding="async" width="2875" height="4032">
+              </a>
+              <figcaption class="gcap">
+                <div class="gname">004<br><span class="gfolder">5x7</span><br>IMG_2400.jpg</div>
+                <div class="gmeta">2875×4032</div>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <!-- 005 - IMG_2464.jpg -->
+        <div class="set">
+          <div class="sethead">
+            <p class="settitle"><span class="num">005</span> IMG_2464.jpg</p>
+            <p class="setmeta">Original • 8.5x11 • 5x7</p>
+          </div>
+          <div class="setgrid">
+            <figure class="gitem">
+              <a class="glink" href="assets/img/Originals/IMG_2464.jpg" target="_blank" rel="noopener"
+                 data-full="assets/img/Originals/IMG_2464.jpg" data-folder="Original" data-name="IMG_2464.jpg" data-dim="4032×3024">
+                <img src="assets/img/Originals/IMG_2464.jpg" alt="IMG_2464.jpg" loading="lazy" decoding="async" width="4032" height="3024">
+              </a>
+              <figcaption class="gcap">
+                <div class="gname">005<br><span class="gfolder">Original</span><br>IMG_2464.jpg</div>
+                <div class="gmeta">4032×3024</div>
+              </figcaption>
+            </figure>
+            <figure class="gitem">
+              <a class="glink" href="assets/img/8.5x11/IMG_2464.jpg" target="_blank" rel="noopener"
+                 data-full="assets/img/8.5x11/IMG_2464.jpg" data-folder="8.5x11" data-name="IMG_2464.jpg" data-dim="3024×3913">
+                <img src="assets/img/8.5x11/IMG_2464.jpg" alt="IMG_2464.jpg" loading="lazy" decoding="async" width="3024" height="3913">
+              </a>
+              <figcaption class="gcap">
+                <div class="gname">005<br><span class="gfolder">8.5x11</span><br>IMG_2464.jpg</div>
+                <div class="gmeta">3024×3913</div>
+              </figcaption>
+            </figure>
+            <figure class="gitem">
+              <a class="glink" href="assets/img/5x7/IMG_2464.jpg" target="_blank" rel="noopener"
+                 data-full="assets/img/5x7/IMG_2464.jpg" data-folder="5x7" data-name="IMG_2464.jpg" data-dim="2880×4032">
+                <img src="assets/img/5x7/IMG_2464.jpg" alt="IMG_2464.jpg" loading="lazy" decoding="async" width="2880" height="4032">
+              </a>
+              <figcaption class="gcap">
+                <div class="gname">005<br><span class="gfolder">5x7</span><br>IMG_2464.jpg</div>
+                <div class="gmeta">2880×4032</div>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <!-- 006 - IMG_2856.jpg -->
+        <div class="set">
+          <div class="sethead">
+            <p class="settitle"><span class="num">006</span> IMG_2856.jpg</p>
+            <p class="setmeta">Original • 8.5x11 • 5x7</p>
+          </div>
+          <div class="setgrid">
+            <figure class="gitem">
+              <a class="glink" href="assets/img/Originals/IMG_2856.jpg" target="_blank" rel="noopener"
+                 data-full="assets/img/Originals/IMG_2856.jpg" data-folder="Original" data-name="IMG_2856.jpg" data-dim="4032×3024">
+                <img src="assets/img/Originals/IMG_2856.jpg" alt="IMG_2856.jpg" loading="lazy" decoding="async" width="4032" height="3024">
+              </a>
+              <figcaption class="gcap">
+                <div class="gname">006<br><span class="gfolder">Original</span><br>IMG_2856.jpg</div>
+                <div class="gmeta">4032×3024</div>
+              </figcaption>
+            </figure>
+            <figure class="gitem">
+              <a class="glink" href="assets/img/8.5x11/IMG_2856.jpg" target="_blank" rel="noopener"
+                 data-full="assets/img/8.5x11/IMG_2856.jpg" data-folder="8.5x11" data-name="IMG_2856.jpg" data-dim="3909×3024">
+                <img src="assets/img/8.5x11/IMG_2856.jpg" alt="IMG_2856.jpg" loading="lazy" decoding="async" width="3909" height="3024">
+              </a>
+              <figcaption class="gcap">
+                <div class="gname">006<br><span class="gfolder">8.5x11</span><br>IMG_2856.jpg</div>
+                <div class="gmeta">3909×3024</div>
+              </figcaption>
+            </figure>
+            <figure class="gitem">
+              <a class="glink" href="assets/img/5x7/IMG_2856.jpg" target="_blank" rel="noopener"
+                 data-full="assets/img/5x7/IMG_2856.jpg" data-folder="5x7" data-name="IMG_2856.jpg" data-dim="4032×2883">
+                <img src="assets/img/5x7/IMG_2856.jpg" alt="IMG_2856.jpg" loading="lazy" decoding="async" width="4032" height="2883">
+              </a>
+              <figcaption class="gcap">
+                <div class="gname">006<br><span class="gfolder">5x7</span><br>IMG_2856.jpg</div>
+                <div class="gmeta">4032×2883</div>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <!-- 007 - IMG_3197.jpg -->
+        <div class="set">
+          <div class="sethead">
+            <p class="settitle"><span class="num">007</span> IMG_3197.jpg</p>
+            <p class="setmeta">Original • 8.5x11 • 5x7</p>
+          </div>
+          <div class="setgrid">
+            <figure class="gitem">
+              <a class="glink" href="assets/img/Originals/IMG_3197.jpg" target="_blank" rel="noopener"
+                 data-full="assets/img/Originals/IMG_3197.jpg" data-folder="Original" data-name="IMG_3197.jpg" data-dim="2277×1290">
+                <img src="assets/img/Originals/IMG_3197.jpg" alt="IMG_3197.jpg" loading="lazy" decoding="async" width="2277" height="1290">
+              </a>
+              <figcaption class="gcap">
+                <div class="gname">007<br><span class="gfolder">Original</span><br>IMG_3197.jpg</div>
+                <div class="gmeta">2277×1290</div>
+              </figcaption>
+            </figure>
+            <figure class="gitem">
+              <a class="glink" href="assets/img/8.5x11/IMG_3197.jpg" target="_blank" rel="noopener"
+                 data-full="assets/img/8.5x11/IMG_3197.jpg" data-folder="8.5x11" data-name="IMG_3197.jpg" data-dim="1668×1288">
+                <img src="assets/img/8.5x11/IMG_3197.jpg" alt="IMG_3197.jpg" loading="lazy" decoding="async" width="1668" height="1288">
+              </a>
+              <figcaption class="gcap">
+                <div class="gname">007<br><span class="gfolder">8.5x11</span><br>IMG_3197.jpg</div>
+                <div class="gmeta">1668×1288</div>
+              </figcaption>
+            </figure>
+            <figure class="gitem">
+              <a class="glink" href="assets/img/5x7/IMG_3197.jpg" target="_blank" rel="noopener"
+                 data-full="assets/img/5x7/IMG_3197.jpg" data-folder="5x7" data-name="IMG_3197.jpg" data-dim="1804×1290">
+                <img src="assets/img/5x7/IMG_3197.jpg" alt="IMG_3197.jpg" loading="lazy" decoding="async" width="1804" height="1290">
+              </a>
+              <figcaption class="gcap">
+                <div class="gname">007<br><span class="gfolder">5x7</span><br>IMG_3197.jpg</div>
+                <div class="gmeta">1804×1290</div>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <!-- 008 - IMG_4761.jpg -->
+        <div class="set">
+          <div class="sethead">
+            <p class="settitle"><span class="num">008</span> IMG_4761.jpg</p>
+            <p class="setmeta">Original • 8.5x11 • 5x7</p>
+          </div>
+          <div class="setgrid">
+            <figure class="gitem">
+              <a class="glink" href="assets/img/Originals/IMG_4761.jpg" target="_blank" rel="noopener"
+                 data-full="assets/img/Originals/IMG_4761.jpg" data-folder="Original" data-name="IMG_4761.jpg" data-dim="4032×3024">
+                <img src="assets/img/Originals/IMG_4761.jpg" alt="IMG_4761.jpg" loading="lazy" decoding="async" width="4032" height="3024">
+              </a>
+              <figcaption class="gcap">
+                <div class="gname">008<br><span class="gfolder">Original</span><br>IMG_4761.jpg</div>
+                <div class="gmeta">4032×3024</div>
+              </figcaption>
+            </figure>
+            <figure class="gitem">
+              <a class="glink" href="assets/img/8.5x11/IMG_4761.jpg" target="_blank" rel="noopener"
+                 data-full="assets/img/8.5x11/IMG_4761.jpg" data-folder="8.5x11" data-name="IMG_4761.jpg" data-dim="3024×3913">
+                <img src="assets/img/8.5x11/IMG_4761.jpg" alt="IMG_4761.jpg" loading="lazy" decoding="async" width="3024" height="3913">
+              </a>
+              <figcaption class="gcap">
+                <div class="gname">008<br><span class="gfolder">8.5x11</span><br>IMG_4761.jpg</div>
+                <div class="gmeta">3024×3913</div>
+              </figcaption>
+            </figure>
+            <figure class="gitem">
+              <a class="glink" href="assets/img/5x7/IMG_4761.jpg" target="_blank" rel="noopener"
+                 data-full="assets/img/5x7/IMG_4761.jpg" data-folder="5x7" data-name="IMG_4761.jpg" data-dim="2875×4032">
+                <img src="assets/img/5x7/IMG_4761.jpg" alt="IMG_4761.jpg" loading="lazy" decoding="async" width="2875" height="4032">
+              </a>
+              <figcaption class="gcap">
+                <div class="gname">008<br><span class="gfolder">5x7</span><br>IMG_4761.jpg</div>
+                <div class="gmeta">2875×4032</div>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <!-- 009 - IMG_4762.jpg -->
+        <div class="set">
+          <div class="sethead">
+            <p class="settitle"><span class="num">009</span> IMG_4762.jpg</p>
+            <p class="setmeta">Original • 8.5x11 • 5x7</p>
+          </div>
+          <div class="setgrid">
+            <figure class="gitem">
+              <a class="glink" href="assets/img/Originals/IMG_4762.jpg" target="_blank" rel="noopener"
+                 data-full="assets/img/Originals/IMG_4762.jpg" data-folder="Original" data-name="IMG_4762.jpg" data-dim="4032×3024">
+                <img src="assets/img/Originals/IMG_4762.jpg" alt="IMG_4762.jpg" loading="lazy" decoding="async" width="4032" height="3024">
+              </a>
+              <figcaption class="gcap">
+                <div class="gname">009<br><span class="gfolder">Original</span><br>IMG_4762.jpg</div>
+                <div class="gmeta">4032×3024</div>
+              </figcaption>
+            </figure>
+            <figure class="gitem">
+              <a class="glink" href="assets/img/8.5x11/IMG_4762.jpg" target="_blank" rel="noopener"
+                 data-full="assets/img/8.5x11/IMG_4762.jpg" data-folder="8.5x11" data-name="IMG_4762.jpg" data-dim="3024×3913">
+                <img src="assets/img/8.5x11/IMG_4762.jpg" alt="IMG_4762.jpg" loading="lazy" decoding="async" width="3024" height="3913">
+              </a>
+              <figcaption class="gcap">
+                <div class="gname">009<br><span class="gfolder">8.5x11</span><br>IMG_4762.jpg</div>
+                <div class="gmeta">3024×3913</div>
+              </figcaption>
+            </figure>
+            <figure class="gitem">
+              <a class="glink" href="assets/img/5x7/IMG_4762.jpg" target="_blank" rel="noopener"
+                 data-full="assets/img/5x7/IMG_4762.jpg" data-folder="5x7" data-name="IMG_4762.jpg" data-dim="2876×4032">
+                <img src="assets/img/5x7/IMG_4762.jpg" alt="IMG_4762.jpg" loading="lazy" decoding="async" width="2876" height="4032">
+              </a>
+              <figcaption class="gcap">
+                <div class="gname">009<br><span class="gfolder">5x7</span><br>IMG_4762.jpg</div>
+                <div class="gmeta">2876×4032</div>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+
       </div>
     </section>
 
     <footer class="footer">
-<div class="nav3" aria-label="Page navigation">
-  <a class="btn" href="../../">Home</a>
-</div>
+      <div class="container narrow">
+        <div class="hr"></div>
+        <p><a href="./">Home</a> | <a href="credits/">Credits and licences</a></p>
+      </div>
     </footer>
   </main>
 
@@ -528,12 +576,16 @@
       const lbMeta = document.getElementById('lbMeta');
       const lbClose = document.getElementById('lbClose');
       const lbOpen = document.getElementById('lbOpen');
-      const links = Array.from(document.querySelectorAll('#gallery a.glink'));
+      const links = Array.from(document.querySelectorAll('a.glink'));
 
-      function openLB(href, name, dim){
+      function openLB(href, folder, name, dim){
         lbImg.src = href;
         lbImg.alt = name || 'Image';
-        lbMeta.textContent = (name ? name : '') + (dim ? (' • ' + dim) : '');
+        const parts = [];
+        if (folder) parts.push(folder);
+        if (name) parts.push(name);
+        if (dim) parts.push(dim);
+        lbMeta.textContent = parts.join(' • ');
         lbOpen.href = href;
         lightbox.hidden = false;
         lightbox.setAttribute('aria-hidden', 'false');
@@ -550,7 +602,12 @@
       links.forEach(a => {
         a.addEventListener('click', (e) => {
           e.preventDefault();
-          openLB(a.getAttribute('data-full') || a.href, a.dataset.name, a.dataset.dim);
+          openLB(
+            a.getAttribute('data-full') || a.href,
+            a.dataset.folder,
+            a.dataset.name,
+            a.dataset.dim
+          );
         });
       });
 
