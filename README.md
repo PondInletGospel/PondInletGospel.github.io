@@ -12,7 +12,9 @@
 - `originals.html` - original image gallery
 - `printables.html` - printable image gallery
 
-The primary menu is CSS-only. Desktop navigation is shown horizontally and mobile navigation uses a compact disclosure menu, so no menu JavaScript is required.
+The primary menu is CSS-only. 
+Desktop navigation is shown horizontally and mobile navigation uses a compact disclosure menu.
+No menu JavaScript is required.
 
 ## Future language structure
 
