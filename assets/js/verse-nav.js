@@ -3,68 +3,53 @@
   const nextEl = document.getElementById("nextLink");
   if (!prevEl || !nextEl) return;
 
-  // Change to "alpha" if you want alphabetical order instead of home-page order
-  const ORDER_MODE = "index"; // "index" | "alpha"
-
-  function getCurrentSlug() {
-    // Works for /v/slug/ and /repo/v/slug/ (GitHub Pages project sites)
+  function currentSlug() {
     const parts = window.location.pathname.split("/").filter(Boolean);
-    const vIndex = parts.indexOf("v");
-    if (vIndex === -1 || !parts[vIndex + 1]) return null;
-    return parts[vIndex + 1];
+    const index = parts.indexOf("v");
+    return index >= 0 ? parts[index + 1] : null;
   }
 
-  function unique(arr) {
-    return [...new Set(arr)];
-  }
+  async function verseSlugs() {
+    const listUrl = new URL("../../verses/index.html", window.location.href);
+    const response = await fetch(listUrl, { cache: "no-store" });
+    if (!response.ok) throw new Error("Could not load the verse list");
 
-  async function getSlugsFromHome() {
-    // From /v/<slug>/ the home page is ../../index.html
-    const homeUrl = new URL("../../index.html", window.location.href);
-    const res = await fetch(homeUrl, { cache: "no-store" });
-    if (!res.ok) throw new Error("Could not fetch home page");
-    const html = await res.text();
-
-    // Extract href="v/<slug>/" links (keeps home-page order)
-    const re = /href\s*=\s*["']v\/([^"'/]+)\/["']/gi;
+    const html = await response.text();
+    const documentCopy = new DOMParser().parseFromString(html, "text/html");
     const slugs = [];
-    let m;
-    while ((m = re.exec(html)) !== null) slugs.push(m[1]);
 
-    const cleaned = unique(slugs).filter(Boolean);
-    if (!cleaned.length) throw new Error("No verse links found on home page");
-    return cleaned;
+    documentCopy.querySelectorAll("a.versecard[href]").forEach(link => {
+      const url = new URL(link.getAttribute("href"), listUrl);
+      const parts = url.pathname.split("/").filter(Boolean);
+      const index = parts.indexOf("v");
+      if (index >= 0 && parts[index + 1] && !slugs.includes(parts[index + 1])) {
+        slugs.push(parts[index + 1]);
+      }
+    });
+
+    return slugs;
   }
 
-  async function initNav() {
-    const current = getCurrentSlug();
-    if (!current) return;
+  async function initialise() {
+    const activeSlug = currentSlug();
+    if (!activeSlug) return;
 
-    let slugs;
     try {
-      slugs = await getSlugsFromHome();
-    } catch (e) {
-      // Safe fallback: keep whatever is already in the HTML (don’t break the page)
-      return;
+      const slugs = await verseSlugs();
+      const index = slugs.indexOf(activeSlug);
+      if (index < 0 || slugs.length < 2) return;
+
+      const previous = slugs[(index - 1 + slugs.length) % slugs.length];
+      const next = slugs[(index + 1) % slugs.length];
+
+      prevEl.href = `../${previous}/`;
+      nextEl.href = `../${next}/`;
+      prevEl.rel = "prev";
+      nextEl.rel = "next";
+    } catch (error) {
+      console.warn("Verse navigation could not be updated.", error);
     }
-
-    if (ORDER_MODE === "alpha") {
-      slugs = [...slugs].sort((a, b) => a.localeCompare(b));
-    }
-
-    const i = slugs.indexOf(current);
-    if (i === -1) return;
-
-    const prevSlug = slugs[(i - 1 + slugs.length) % slugs.length];
-    const nextSlug = slugs[(i + 1) % slugs.length];
-
-    // Relative from /v/<current>/ to /v/<other>/ is ../<other>/
-    prevEl.href = `../${prevSlug}/`;
-    nextEl.href = `../${nextSlug}/`;
-
-    prevEl.setAttribute("rel", "prev");
-    nextEl.setAttribute("rel", "next");
   }
 
-  initNav();
+  initialise();
 })();

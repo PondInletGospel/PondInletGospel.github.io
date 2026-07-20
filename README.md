@@ -1,18 +1,30 @@
-# Pond Inlet Gospel - What’s included
+# Pond Inlet Gospel
 
-- `index.html` - start page with a short Gospel summary and links to verse pages and Videos
+## Main pages
+
+- `index.html` - lightweight start page
+- `gospel/` - Gospel explanation
+- `verses/` - verse index and source for automatic Previous/Next ordering
+- `videos/` - video index
+- `contact/` - contact information
 - `v/<verse>/` - individual verse pages
-- `video/<video>/` - individual video pages (Youtube Embeds)
-- `credits/` - photo credits and licences
-- `assets/` - CSS, images, icons, js
+- `video/<video>/` - individual privacy-enhanced YouTube pages
+- `originals.html` - original image gallery
+- `printables.html` - printable image gallery
 
+The primary menu is CSS-only. Desktop navigation is shown horizontally and mobile navigation uses a compact disclosure menu, so no menu JavaScript is required.
 
-## Test locally Python
-From this folder:
+## Future language structure
+
+Keep the existing root URLs as English to preserve QR codes and links. Add future translations under separate folders such as:
+
+- `/iu/` for Inuktitut syllabics
+- `/iu-latn/` for Inuktitut Roman orthography
+
+## Test locally
 
 ```bash
 python -m http.server 8000
 ```
 
-Then open `http://localhost:8000` in a browser.
-
+Open `http://localhost:8000`.
