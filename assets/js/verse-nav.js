@@ -11,7 +11,7 @@
 
   async function verseSlugs() {
     const listUrl = new URL("../../verses/index.html", window.location.href);
-    const response = await fetch(listUrl, { cache: "no-store" });
+    const response = await fetch(listUrl);
     if (!response.ok) throw new Error("Could not load the verse list");
 
     const html = await response.text();

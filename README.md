@@ -1,4 +1,7 @@
-# Pond Inlet Gospel
+# High Arctic Good News
+
+High Arctic Good News is a simple, lightweight Gospel website based in Pond Inlet, Nunavut.
+
 
 ## Main pages
 
